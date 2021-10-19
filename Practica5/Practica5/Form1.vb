@@ -37,13 +37,17 @@
     End Sub
 
     Private Sub IntercambioListas()
-        MiListaDestino.Items.Add(MiListaOrigen.SelectedItem)
-        MiListaOrigen.Items.Remove(MiListaOrigen.SelectedItem)
+        Do While MiListaOrigen.SelectedItems.Count
+            MiListaDestino.Items.Add(MiListaOrigen.SelectedItems(0))
+            MiListaOrigen.Items.Remove(MiListaDestino.SelectedItems(0))
+        Loop
+
     End Sub
 
     Private Sub Ltbx_listaIzq_DoubleClick(sender As Object, e As EventArgs) _
                 Handles Ltbx_listaIzq.DoubleClick, Ltbx_listaCentro.DoubleClick
         Dim MiLista As ListBox = sender
+        If MiLista.SelectedItem.count = 0 Then Exit Sub
         Select Case MiLista.Name.ToString
             Case "Ltbx_listaIzq"
                 MiListaOrigen = Ltbx_listaIzq

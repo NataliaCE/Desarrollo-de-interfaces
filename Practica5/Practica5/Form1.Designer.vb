@@ -37,6 +37,7 @@ Partial Class Form1
         Me.Ltbx_listaIzq.Items.AddRange(New Object() {"Ford", "Mazda", "Seat", "Audi", "Mercedes"})
         Me.Ltbx_listaIzq.Location = New System.Drawing.Point(99, 138)
         Me.Ltbx_listaIzq.Name = "Ltbx_listaIzq"
+        Me.Ltbx_listaIzq.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
         Me.Ltbx_listaIzq.Size = New System.Drawing.Size(120, 154)
         Me.Ltbx_listaIzq.TabIndex = 0
         '
@@ -79,6 +80,7 @@ Partial Class Form1
         Me.Ltbx_listaCentro.Items.AddRange(New Object() {"Ford", "Mazda", "Seat", "Audi", "Mercedes"})
         Me.Ltbx_listaCentro.Location = New System.Drawing.Point(289, 138)
         Me.Ltbx_listaCentro.Name = "Ltbx_listaCentro"
+        Me.Ltbx_listaCentro.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
         Me.Ltbx_listaCentro.Size = New System.Drawing.Size(120, 154)
         Me.Ltbx_listaCentro.TabIndex = 3
         '
