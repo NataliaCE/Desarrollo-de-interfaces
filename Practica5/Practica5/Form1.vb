@@ -1,5 +1,8 @@
 ﻿Public Class Form1
 
+    Dim MiListaOrigen As ListBox
+    Dim MiListaDestino As ListBox
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InicializarControles()
     End Sub
@@ -31,5 +34,24 @@
         Dim MiBoton As Button = sender
         Dim MiLista As ListBox = MiBoton.Tag
         MiLista.Items.Clear()
+    End Sub
+
+    Private Sub IntercambioListas()
+        MiListaDestino.Items.Add(MiListaOrigen.SelectedItem)
+        MiListaOrigen.Items.Remove(MiListaOrigen.SelectedItem)
+    End Sub
+
+    Private Sub Ltbx_listaIzq_DoubleClick(sender As Object, e As EventArgs) _
+                Handles Ltbx_listaIzq.DoubleClick, Ltbx_listaCentro.DoubleClick
+        Dim MiLista As ListBox = sender
+        Select Case MiLista.Name.ToString
+            Case "Ltbx_listaIzq"
+                MiListaOrigen = Ltbx_listaIzq
+                MiListaDestino = Ltbx_listaCentro
+            Case "Ltbx_listaCentro"
+                MiListaOrigen = Ltbx_listaCentro
+                MiListaDestino = Ltbx_listaIzq
+        End Select
+        IntercambioListas()
     End Sub
 End Class
