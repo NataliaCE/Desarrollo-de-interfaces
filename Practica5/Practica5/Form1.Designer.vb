@@ -39,126 +39,142 @@ Partial Class Form1
         '
         'Ltbx_listaIzq
         '
+        Me.Ltbx_listaIzq.AllowDrop = True
         Me.Ltbx_listaIzq.FormattingEnabled = True
-        Me.Ltbx_listaIzq.ItemHeight = 15
+        Me.Ltbx_listaIzq.ItemHeight = 20
         Me.Ltbx_listaIzq.Items.AddRange(New Object() {"Ford", "Mazda", "Seat", "Audi", "Mercedes"})
-        Me.Ltbx_listaIzq.Location = New System.Drawing.Point(78, 138)
+        Me.Ltbx_listaIzq.Location = New System.Drawing.Point(89, 184)
+        Me.Ltbx_listaIzq.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Ltbx_listaIzq.Name = "Ltbx_listaIzq"
         Me.Ltbx_listaIzq.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.Ltbx_listaIzq.Size = New System.Drawing.Size(120, 154)
+        Me.Ltbx_listaIzq.Size = New System.Drawing.Size(137, 204)
         Me.Ltbx_listaIzq.TabIndex = 0
         '
         'Txtb_EntradaListIzq
         '
-        Me.Txtb_EntradaListIzq.Location = New System.Drawing.Point(78, 309)
+        Me.Txtb_EntradaListIzq.Location = New System.Drawing.Point(89, 412)
+        Me.Txtb_EntradaListIzq.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Txtb_EntradaListIzq.Name = "Txtb_EntradaListIzq"
-        Me.Txtb_EntradaListIzq.Size = New System.Drawing.Size(120, 23)
+        Me.Txtb_EntradaListIzq.Size = New System.Drawing.Size(137, 27)
         Me.Txtb_EntradaListIzq.TabIndex = 1
         '
         'Btn_borr_listaIzq
         '
-        Me.Btn_borr_listaIzq.Location = New System.Drawing.Point(78, 100)
+        Me.Btn_borr_listaIzq.Location = New System.Drawing.Point(89, 133)
+        Me.Btn_borr_listaIzq.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Btn_borr_listaIzq.Name = "Btn_borr_listaIzq"
-        Me.Btn_borr_listaIzq.Size = New System.Drawing.Size(120, 23)
+        Me.Btn_borr_listaIzq.Size = New System.Drawing.Size(137, 31)
         Me.Btn_borr_listaIzq.TabIndex = 2
         Me.Btn_borr_listaIzq.Text = "Borrar lista"
         Me.Btn_borr_listaIzq.UseVisualStyleBackColor = True
         '
         'Btn_borr_listaCentro
         '
-        Me.Btn_borr_listaCentro.Location = New System.Drawing.Point(335, 100)
+        Me.Btn_borr_listaCentro.Location = New System.Drawing.Point(383, 133)
+        Me.Btn_borr_listaCentro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Btn_borr_listaCentro.Name = "Btn_borr_listaCentro"
-        Me.Btn_borr_listaCentro.Size = New System.Drawing.Size(120, 23)
+        Me.Btn_borr_listaCentro.Size = New System.Drawing.Size(137, 31)
         Me.Btn_borr_listaCentro.TabIndex = 5
         Me.Btn_borr_listaCentro.Text = "Borrar lista"
         Me.Btn_borr_listaCentro.UseVisualStyleBackColor = True
         '
         'Txtb_EntradaListCentro
         '
-        Me.Txtb_EntradaListCentro.Location = New System.Drawing.Point(335, 309)
+        Me.Txtb_EntradaListCentro.Location = New System.Drawing.Point(383, 412)
+        Me.Txtb_EntradaListCentro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Txtb_EntradaListCentro.Name = "Txtb_EntradaListCentro"
-        Me.Txtb_EntradaListCentro.Size = New System.Drawing.Size(120, 23)
+        Me.Txtb_EntradaListCentro.Size = New System.Drawing.Size(137, 27)
         Me.Txtb_EntradaListCentro.TabIndex = 4
         '
         'Ltbx_listaCentro
         '
+        Me.Ltbx_listaCentro.AllowDrop = True
         Me.Ltbx_listaCentro.FormattingEnabled = True
-        Me.Ltbx_listaCentro.ItemHeight = 15
+        Me.Ltbx_listaCentro.ItemHeight = 20
         Me.Ltbx_listaCentro.Items.AddRange(New Object() {"Ford", "Mazda", "Seat", "Audi", "Mercedes"})
-        Me.Ltbx_listaCentro.Location = New System.Drawing.Point(335, 138)
+        Me.Ltbx_listaCentro.Location = New System.Drawing.Point(383, 184)
+        Me.Ltbx_listaCentro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Ltbx_listaCentro.Name = "Ltbx_listaCentro"
         Me.Ltbx_listaCentro.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.Ltbx_listaCentro.Size = New System.Drawing.Size(120, 154)
+        Me.Ltbx_listaCentro.Size = New System.Drawing.Size(137, 204)
         Me.Ltbx_listaCentro.TabIndex = 3
         '
         'Btn_borr_listaDecha
         '
-        Me.Btn_borr_listaDecha.Location = New System.Drawing.Point(596, 100)
+        Me.Btn_borr_listaDecha.Location = New System.Drawing.Point(681, 133)
+        Me.Btn_borr_listaDecha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Btn_borr_listaDecha.Name = "Btn_borr_listaDecha"
-        Me.Btn_borr_listaDecha.Size = New System.Drawing.Size(120, 23)
+        Me.Btn_borr_listaDecha.Size = New System.Drawing.Size(137, 31)
         Me.Btn_borr_listaDecha.TabIndex = 8
         Me.Btn_borr_listaDecha.Text = "Borrar lista"
         Me.Btn_borr_listaDecha.UseVisualStyleBackColor = True
         '
         'Txtb_EntradaListDecha
         '
-        Me.Txtb_EntradaListDecha.Location = New System.Drawing.Point(596, 309)
+        Me.Txtb_EntradaListDecha.Location = New System.Drawing.Point(681, 412)
+        Me.Txtb_EntradaListDecha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Txtb_EntradaListDecha.Name = "Txtb_EntradaListDecha"
-        Me.Txtb_EntradaListDecha.Size = New System.Drawing.Size(120, 23)
+        Me.Txtb_EntradaListDecha.Size = New System.Drawing.Size(137, 27)
         Me.Txtb_EntradaListDecha.TabIndex = 7
         '
         'Ltbx_listaDecha
         '
+        Me.Ltbx_listaDecha.AllowDrop = True
         Me.Ltbx_listaDecha.FormattingEnabled = True
-        Me.Ltbx_listaDecha.ItemHeight = 15
+        Me.Ltbx_listaDecha.ItemHeight = 20
         Me.Ltbx_listaDecha.Items.AddRange(New Object() {"Ford", "Mazda", "Seat", "Audi", "Mercedes"})
-        Me.Ltbx_listaDecha.Location = New System.Drawing.Point(596, 138)
+        Me.Ltbx_listaDecha.Location = New System.Drawing.Point(681, 184)
+        Me.Ltbx_listaDecha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Ltbx_listaDecha.Name = "Ltbx_listaDecha"
         Me.Ltbx_listaDecha.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.Ltbx_listaDecha.Size = New System.Drawing.Size(120, 154)
+        Me.Ltbx_listaDecha.Size = New System.Drawing.Size(137, 204)
         Me.Ltbx_listaDecha.TabIndex = 6
         '
         'Btn_IzqACentro
         '
-        Me.Btn_IzqACentro.Location = New System.Drawing.Point(230, 168)
+        Me.Btn_IzqACentro.Location = New System.Drawing.Point(263, 224)
+        Me.Btn_IzqACentro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Btn_IzqACentro.Name = "Btn_IzqACentro"
-        Me.Btn_IzqACentro.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_IzqACentro.Size = New System.Drawing.Size(86, 31)
         Me.Btn_IzqACentro.TabIndex = 9
         Me.Btn_IzqACentro.Text = "---->"
         Me.Btn_IzqACentro.UseVisualStyleBackColor = True
         '
         'Btn_CentroAIzq
         '
-        Me.Btn_CentroAIzq.Location = New System.Drawing.Point(230, 224)
+        Me.Btn_CentroAIzq.Location = New System.Drawing.Point(263, 299)
+        Me.Btn_CentroAIzq.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Btn_CentroAIzq.Name = "Btn_CentroAIzq"
-        Me.Btn_CentroAIzq.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_CentroAIzq.Size = New System.Drawing.Size(86, 31)
         Me.Btn_CentroAIzq.TabIndex = 10
         Me.Btn_CentroAIzq.Text = "<----"
         Me.Btn_CentroAIzq.UseVisualStyleBackColor = True
         '
         'Btn_DechaACentro
         '
-        Me.Btn_DechaACentro.Location = New System.Drawing.Point(492, 224)
+        Me.Btn_DechaACentro.Location = New System.Drawing.Point(562, 299)
+        Me.Btn_DechaACentro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Btn_DechaACentro.Name = "Btn_DechaACentro"
-        Me.Btn_DechaACentro.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_DechaACentro.Size = New System.Drawing.Size(86, 31)
         Me.Btn_DechaACentro.TabIndex = 12
         Me.Btn_DechaACentro.Text = "<----"
         Me.Btn_DechaACentro.UseVisualStyleBackColor = True
         '
         'Btn_CentroADecha
         '
-        Me.Btn_CentroADecha.Location = New System.Drawing.Point(492, 168)
+        Me.Btn_CentroADecha.Location = New System.Drawing.Point(562, 224)
+        Me.Btn_CentroADecha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Btn_CentroADecha.Name = "Btn_CentroADecha"
-        Me.Btn_CentroADecha.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_CentroADecha.Size = New System.Drawing.Size(86, 31)
         Me.Btn_CentroADecha.TabIndex = 11
         Me.Btn_CentroADecha.Text = "---->"
         Me.Btn_CentroADecha.UseVisualStyleBackColor = True
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(914, 600)
         Me.Controls.Add(Me.Btn_DechaACentro)
         Me.Controls.Add(Me.Btn_CentroADecha)
         Me.Controls.Add(Me.Btn_CentroAIzq)
@@ -172,6 +188,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Btn_borr_listaIzq)
         Me.Controls.Add(Me.Txtb_EntradaListIzq)
         Me.Controls.Add(Me.Ltbx_listaIzq)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)

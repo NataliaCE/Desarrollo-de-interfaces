@@ -86,4 +86,36 @@
         End Select
         IntercambioListas()
     End Sub
+
+    Private Sub Ltbx_listaIzq_MouseDown(sender As Object, e As MouseEventArgs) _
+        Handles Ltbx_listaIzq.MouseDown, Ltbx_listaCentro.MouseDown, Ltbx_listaDecha.MouseDown
+        MiListaOrigen = sender
+        Select Case MiListaOrigen.Name
+            Case "Ltbx_listaIzq"
+                MiListaDestino = Ltbx_listaDecha
+            Case "Ltbx_listaCentro"
+                MiListaDestino = Ltbx_listaIzq
+            Case "Ltbx_listaDecha"
+                MiListaDestino = Ltbx_listaCentro
+        End Select
+
+        ''Evita problemas al hacer doble-click en elementos
+        If e.Clicks = 2 Then
+            IntercambioListas()
+            Exit Sub
+        End If
+
+        MiListaOrigen.DoDragDrop(MiListaOrigen.Text, DragDropEffects.Move)
+    End Sub
+
+    Private Sub Ltbx_DragOver(sender As Object, e As DragEventArgs) _
+        Handles Ltbx_listaIzq.DragOver, Ltbx_listaCentro.DragOver, Ltbx_listaDecha.DragOver
+        e.Effect = DragDropEffects.Move
+    End Sub
+
+    Private Sub Ltbx_DragDrop(sender As Object, e As DragEventArgs) _
+        Handles Ltbx_listaIzq.DragDrop, Ltbx_listaCentro.DragDrop, Ltbx_listaDecha.DragDrop
+        MiListaDestino = sender
+        IntercambioListas()
+    End Sub
 End Class
