@@ -13,6 +13,7 @@
     Sub click_Boton(MiObjeto As Object, evento As EventArgs)
         MessageBox.Show("Hola")
     End Sub
+
 End Class
 
 ''Cada vez que se pulsa un botón, se crean textboxes.
