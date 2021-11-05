@@ -25,23 +25,23 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuPrincipal = New System.Windows.Forms.MenuStrip()
         Me.PrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VentanasHijosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargarHijosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImagenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarVentanaActualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarTodasLasVentanasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SalirDeLaAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImagenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentanasHijosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CascadaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerticalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HorizontalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuHerramientas = New System.Windows.Forms.ToolStrip()
         Me.TS_texto = New System.Windows.Forms.ToolStripButton()
         Me.TS_imagen = New System.Windows.Forms.ToolStripButton()
         Me.TS_cerrar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TS_About = New System.Windows.Forms.ToolStripButton()
         Me.MenuPrincipal.SuspendLayout()
         Me.MenuHerramientas.SuspendLayout()
         Me.SuspendLayout()
@@ -62,19 +62,24 @@ Partial Class Form1
         Me.PrincipalToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.PrincipalToolStripMenuItem.Text = "Principal"
         '
-        'VentanasHijosToolStripMenuItem
-        '
-        Me.VentanasHijosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CascadaToolStripMenuItem, Me.VerticalToolStripMenuItem, Me.HorizontalToolStripMenuItem})
-        Me.VentanasHijosToolStripMenuItem.Name = "VentanasHijosToolStripMenuItem"
-        Me.VentanasHijosToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
-        Me.VentanasHijosToolStripMenuItem.Text = "Ventanas Hijos (Childs)"
-        '
         'CargarHijosToolStripMenuItem
         '
         Me.CargarHijosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TextoToolStripMenuItem, Me.ImagenToolStripMenuItem})
         Me.CargarHijosToolStripMenuItem.Name = "CargarHijosToolStripMenuItem"
         Me.CargarHijosToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
         Me.CargarHijosToolStripMenuItem.Text = "Cargar hijos"
+        '
+        'TextoToolStripMenuItem
+        '
+        Me.TextoToolStripMenuItem.Name = "TextoToolStripMenuItem"
+        Me.TextoToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.TextoToolStripMenuItem.Text = "Texto"
+        '
+        'ImagenToolStripMenuItem
+        '
+        Me.ImagenToolStripMenuItem.Name = "ImagenToolStripMenuItem"
+        Me.ImagenToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.ImagenToolStripMenuItem.Text = "Imagen"
         '
         'CerrarVentanaActualToolStripMenuItem
         '
@@ -99,17 +104,12 @@ Partial Class Form1
         Me.SalirDeLaAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
         Me.SalirDeLaAplicaciónToolStripMenuItem.Text = "Salir de la aplicación"
         '
-        'TextoToolStripMenuItem
+        'VentanasHijosToolStripMenuItem
         '
-        Me.TextoToolStripMenuItem.Name = "TextoToolStripMenuItem"
-        Me.TextoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.TextoToolStripMenuItem.Text = "Texto"
-        '
-        'ImagenToolStripMenuItem
-        '
-        Me.ImagenToolStripMenuItem.Name = "ImagenToolStripMenuItem"
-        Me.ImagenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ImagenToolStripMenuItem.Text = "Imagen"
+        Me.VentanasHijosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CascadaToolStripMenuItem, Me.VerticalToolStripMenuItem, Me.HorizontalToolStripMenuItem})
+        Me.VentanasHijosToolStripMenuItem.Name = "VentanasHijosToolStripMenuItem"
+        Me.VentanasHijosToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
+        Me.VentanasHijosToolStripMenuItem.Text = "Ventanas Hijos (Childs)"
         '
         'CascadaToolStripMenuItem
         '
@@ -129,10 +129,17 @@ Partial Class Form1
         Me.HorizontalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.HorizontalToolStripMenuItem.Text = "Horizontal"
         '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(24, 20)
+        Me.ToolStripMenuItem2.Text = "?"
+        '
         'MenuHerramientas
         '
         Me.MenuHerramientas.ImageScalingSize = New System.Drawing.Size(25, 25)
-        Me.MenuHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_texto, Me.TS_imagen, Me.TS_cerrar, Me.ToolStripButton1})
+        Me.MenuHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_texto, Me.TS_imagen, Me.TS_cerrar, Me.TS_About})
         Me.MenuHerramientas.Location = New System.Drawing.Point(0, 24)
         Me.MenuHerramientas.Name = "MenuHerramientas"
         Me.MenuHerramientas.Size = New System.Drawing.Size(919, 32)
@@ -166,22 +173,15 @@ Partial Class Form1
         Me.TS_cerrar.Size = New System.Drawing.Size(29, 29)
         Me.TS_cerrar.Text = "Cerrar ventanas"
         '
-        'ToolStripButton1
+        'TS_About
         '
-        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(29, 29)
-        Me.ToolStripButton1.Text = "Acerca de..."
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(24, 20)
-        Me.ToolStripMenuItem2.Text = "?"
+        Me.TS_About.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TS_About.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TS_About.Image = CType(resources.GetObject("TS_About.Image"), System.Drawing.Image)
+        Me.TS_About.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TS_About.Name = "TS_About"
+        Me.TS_About.Size = New System.Drawing.Size(29, 29)
+        Me.TS_About.Text = "Acerca de..."
         '
         'Form1
         '
@@ -221,6 +221,6 @@ Partial Class Form1
     Friend WithEvents TS_texto As ToolStripButton
     Friend WithEvents TS_imagen As ToolStripButton
     Friend WithEvents TS_cerrar As ToolStripButton
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents TS_About As ToolStripButton
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
 End Class
