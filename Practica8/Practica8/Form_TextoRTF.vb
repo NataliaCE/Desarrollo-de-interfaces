@@ -4,6 +4,6 @@
     End Sub
 
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
-        RichT_texto.Text = Clipboard.GetText()
+        RichT_texto.Paste()
     End Sub
 End Class

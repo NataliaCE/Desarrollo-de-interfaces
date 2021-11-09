@@ -32,7 +32,7 @@ Partial Class Form1
         Me.CerrarTodasLasVentanasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SalirDeLaAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VentanasHijosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSitem_ventanas = New System.Windows.Forms.ToolStripMenuItem()
         Me.CascadaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerticalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HorizontalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,10 +48,11 @@ Partial Class Form1
         '
         'MenuPrincipal
         '
-        Me.MenuPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrincipalToolStripMenuItem, Me.VentanasHijosToolStripMenuItem, Me.ToolStripMenuItem2})
+        Me.MenuPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrincipalToolStripMenuItem, Me.TSitem_ventanas, Me.ToolStripMenuItem2})
         Me.MenuPrincipal.Location = New System.Drawing.Point(0, 0)
+        Me.MenuPrincipal.MdiWindowListItem = Me.TSitem_ventanas
         Me.MenuPrincipal.Name = "MenuPrincipal"
-        Me.MenuPrincipal.Size = New System.Drawing.Size(919, 24)
+        Me.MenuPrincipal.Size = New System.Drawing.Size(787, 24)
         Me.MenuPrincipal.TabIndex = 0
         Me.MenuPrincipal.Text = "MenuStrip1"
         '
@@ -104,12 +105,12 @@ Partial Class Form1
         Me.SalirDeLaAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
         Me.SalirDeLaAplicaciónToolStripMenuItem.Text = "Salir de la aplicación"
         '
-        'VentanasHijosToolStripMenuItem
+        'TSitem_ventanas
         '
-        Me.VentanasHijosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CascadaToolStripMenuItem, Me.VerticalToolStripMenuItem, Me.HorizontalToolStripMenuItem})
-        Me.VentanasHijosToolStripMenuItem.Name = "VentanasHijosToolStripMenuItem"
-        Me.VentanasHijosToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
-        Me.VentanasHijosToolStripMenuItem.Text = "Ventanas Hijos (Childs)"
+        Me.TSitem_ventanas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CascadaToolStripMenuItem, Me.VerticalToolStripMenuItem, Me.HorizontalToolStripMenuItem})
+        Me.TSitem_ventanas.Name = "TSitem_ventanas"
+        Me.TSitem_ventanas.Size = New System.Drawing.Size(140, 20)
+        Me.TSitem_ventanas.Text = "Ventanas Hijos (Childs)"
         '
         'CascadaToolStripMenuItem
         '
@@ -142,7 +143,7 @@ Partial Class Form1
         Me.MenuHerramientas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_texto, Me.TS_imagen, Me.TS_cerrar, Me.TS_About})
         Me.MenuHerramientas.Location = New System.Drawing.Point(0, 24)
         Me.MenuHerramientas.Name = "MenuHerramientas"
-        Me.MenuHerramientas.Size = New System.Drawing.Size(919, 32)
+        Me.MenuHerramientas.Size = New System.Drawing.Size(787, 32)
         Me.MenuHerramientas.TabIndex = 1
         Me.MenuHerramientas.Text = "ToolStrip1"
         '
@@ -187,7 +188,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(919, 502)
+        Me.ClientSize = New System.Drawing.Size(787, 467)
         Me.Controls.Add(Me.MenuHerramientas)
         Me.Controls.Add(Me.MenuPrincipal)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -213,7 +214,7 @@ Partial Class Form1
     Friend WithEvents CerrarTodasLasVentanasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents SalirDeLaAplicaciónToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents VentanasHijosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TSitem_ventanas As ToolStripMenuItem
     Friend WithEvents CascadaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerticalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HorizontalToolStripMenuItem As ToolStripMenuItem

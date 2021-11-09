@@ -1,28 +1,28 @@
 ﻿Public Class Form1
-    Dim contadorTexto As Integer = 0
-    Dim contadorImagen As Integer = 0
 
     Private Sub Texto_Click(sender As Object, e As EventArgs) Handles TextoToolStripMenuItem.Click, TS_texto.Click
-        contadorTexto += 1
+        Static contadorTexto As Integer = 0
         Dim MiFormTexto As New Form_TextoRTF
+
+        contadorTexto += 1
         MiFormTexto.MdiParent = Me
         MiFormTexto.Text = "Formulario hijo para Texto RTF -- Nº" & contadorTexto
-
         MiFormTexto.Show()
     End Sub
 
     Private Sub Imagen_Click(sender As Object, e As EventArgs) Handles ImagenToolStripMenuItem.Click, TS_imagen.Click
-        contadorImagen += 1
+        Static contadorImagen As Integer = 0
         Dim MiFormImagen As New Form_Imagen
+
+        contadorImagen += 1
         MiFormImagen.MdiParent = Me
         MiFormImagen.Text = "Formulario hijo para Imagen BMP -- Nº" & contadorImagen
-
         MiFormImagen.Show()
     End Sub
 
     Private Sub About_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click, TS_About.Click
         Dim MiFormAbout As New Form_About
-        MiFormAbout.Show()
+        MiFormAbout.ShowDialog()
     End Sub
 
     Private Sub CerrarVentanaActualMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarVentanaActualToolStripMenuItem.Click
@@ -32,9 +32,9 @@
 
     Private Sub CerrarTodasLasVentanasMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarTodasLasVentanasToolStripMenuItem.Click, TS_cerrar.Click
         If MdiChildren.Length = 0 Then Exit Sub
-        While MdiChildren.Length > 0
-            ActiveMdiChild.Close()
-        End While
+        For Each Hijo As Form In Me.MdiChildren
+            Hijo.Close()
+        Next
     End Sub
 
     Private Sub SalirDeLaAplicaciónMenuItem_Click(sender As Object, e As EventArgs) Handles SalirDeLaAplicaciónToolStripMenuItem.Click
