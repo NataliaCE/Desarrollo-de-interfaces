@@ -38,5 +38,13 @@
         For Each MiCheck As CheckBox In gbCheck.Controls
             If MiCheck.Checked Then MiLista.Items.Add(MiCheck.Text & " - " & MiCheck.Tag)
         Next
+        Dim p As Panel = New Panel
     End Sub
 End Class
+
+'AddHandler --> Colores y añadir textbox programaticamente
+'Practica2 --> CheckBox
+'Practica 4 --> Listbox y keypress
+'Practica 5 --> Listbox y drag and drop
+'Practica 7 --> Fuentes
+'Practica 8 --> Menus
