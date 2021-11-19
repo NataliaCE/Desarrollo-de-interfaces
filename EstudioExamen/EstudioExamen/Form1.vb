@@ -48,3 +48,5 @@ End Class
 'Practica 5 --> Listbox y drag and drop
 'Practica 7 --> Fuentes
 'Practica 8 --> Menus
+
+'caja.dock = dockstyle.fill
