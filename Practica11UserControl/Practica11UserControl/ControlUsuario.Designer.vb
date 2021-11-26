@@ -30,25 +30,26 @@ Partial Class ControlUsuario
         'MiLista
         '
         Me.MiLista.FormattingEnabled = True
-        Me.MiLista.Location = New System.Drawing.Point(16, 14)
+        Me.MiLista.Items.AddRange(New Object() {"Rojo", "Azul", "Verde", "Amarillo"})
+        Me.MiLista.Location = New System.Drawing.Point(16, 61)
         Me.MiLista.Name = "MiLista"
         Me.MiLista.Size = New System.Drawing.Size(151, 134)
         Me.MiLista.TabIndex = 0
         '
         'MiTexto
         '
-        Me.MiTexto.Location = New System.Drawing.Point(17, 171)
+        Me.MiTexto.Location = New System.Drawing.Point(17, 218)
         Me.MiTexto.Name = "MiTexto"
         Me.MiTexto.Size = New System.Drawing.Size(151, 20)
         Me.MiTexto.TabIndex = 1
         '
         'MiBoton
         '
-        Me.MiBoton.Location = New System.Drawing.Point(54, 209)
+        Me.MiBoton.Location = New System.Drawing.Point(17, 20)
         Me.MiBoton.Name = "MiBoton"
-        Me.MiBoton.Size = New System.Drawing.Size(75, 23)
-        Me.MiBoton.TabIndex = 2
-        Me.MiBoton.Text = "Agregar"
+        Me.MiBoton.Size = New System.Drawing.Size(150, 23)
+        Me.MiBoton.TabIndex = 3
+        Me.MiBoton.Text = "Borrar lista"
         Me.MiBoton.UseVisualStyleBackColor = True
         '
         'ControlUsuario
