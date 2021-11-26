@@ -7,21 +7,43 @@
         mc:Ignorable="d"
         Title="Ventana Principal" Height="450" Width="800">
     <Grid Margin="-2,0,0,0">
-        <ListBox x:Name="ListaIzq" HorizontalAlignment="Left" Height="182" Margin="56,98,0,0" VerticalAlignment="Top" Width="144">
-            <ListBoxItem Content="Audi"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="campo.jpg" Opacity="0.9"/>
+        </Grid.Background>
+        <ListBox x:Name="ListaIzq" HorizontalAlignment="Left" Height="182" Margin="56,98,0,0" VerticalAlignment="Top" Width="144" SelectionMode="Multiple" AllowDrop="True">
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC0FFFE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
         </ListBox>
-        <ListBox x:Name="ListaCentro" HorizontalAlignment="Left" Height="182" Margin="325,98,0,0" VerticalAlignment="Top" Width="144"/>
-        <ListBox x:Name="ListaDecha" HorizontalAlignment="Left" Height="182" Margin="590,98,0,0" VerticalAlignment="Top" Width="144"/>
-        <TextBox x:Name="TextoIzq" HorizontalAlignment="Left" Height="22" Margin="56,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
-        <TextBox x:Name="TextoCentro" HorizontalAlignment="Left" Height="22" Margin="325,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
-        <TextBox x:Name="TextoDecha" HorizontalAlignment="Left" Height="22" Margin="590,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
-        <Button x:Name="Btn_AddIzq" Content="Borar lista" HorizontalAlignment="Left" Margin="56,61,0,0" VerticalAlignment="Top" Width="144" Height="19"/>
-        <Button x:Name="Btn_AddCentro" Content="Borar lista" HorizontalAlignment="Left" Margin="325,61,0,0" VerticalAlignment="Top" Width="144" Height="19"/>
-        <Button x:Name="Btn_AddDecha" Content="Borar lista" HorizontalAlignment="Left" Margin="590,61,0,0" VerticalAlignment="Top" Width="144" Height="19"/>
-        <Button x:Name="Btn_IzqCentro" Content="---&gt;" HorizontalAlignment="Left" Margin="225,150,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="Btn_CentroIzq" Content="&lt;---" HorizontalAlignment="Left" Margin="225,200,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="Btn_CentroDecha" Content="---&gt;" HorizontalAlignment="Left" Margin="495,150,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="Btn_DechaCentro" Content="&lt;---" HorizontalAlignment="Left" Margin="495,200,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox x:Name="ListaCentro" HorizontalAlignment="Left" Height="182" Margin="325,98,0,0" VerticalAlignment="Top" Width="144" SelectionMode="Multiple" AllowDrop="True">
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC0FFFE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
+        </ListBox>
+        <ListBox x:Name="ListaDecha" HorizontalAlignment="Left" Height="182" Margin="590,98,0,0" VerticalAlignment="Top" Width="144" SelectionMode="Multiple" AllowDrop="True">
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC0FFFE" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
+        </ListBox>
+        <TextBox x:Name="TextoIzq" HorizontalAlignment="Left" Height="22" Margin="56,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" KeyDown="Texto_KeyDown" Background="#FFD1FFAB"/>
+        <TextBox x:Name="TextoCentro" HorizontalAlignment="Left" Height="22" Margin="325,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" KeyDown="Texto_KeyDown" Background="#FFD1FFAB"/>
+        <TextBox x:Name="TextoDecha" HorizontalAlignment="Left" Height="22" Margin="590,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" KeyDown="Texto_KeyDown" Background="#FFD1FFAB"/>
+        <Button x:Name="Btn_BorrarIzq" Content="Borrar lista" HorizontalAlignment="Left" Margin="56,61,0,0" VerticalAlignment="Top" Width="144" Height="19" Click="Click_borrar" Background="White" BorderBrush="#FF4C41FF" BorderThickness="2"/>
+        <Button x:Name="Btn_BorrarCentro" Content="Borrar lista" HorizontalAlignment="Left" Margin="325,61,0,0" VerticalAlignment="Top" Width="144" Height="19" Click="Click_borrar" Background="White" BorderBrush="#FF4C41FF" BorderThickness="2"/>
+        <Button x:Name="Btn_BorrarDecha" Content="Borrar lista" HorizontalAlignment="Left" Margin="590,61,0,0" VerticalAlignment="Top" Width="144" Height="19" Click="Click_borrar" Background="White" BorderBrush="#FF4C41FF" BorderThickness="2"/>
+        <Button x:Name="Btn_IzqCentro" Content="---&gt;" HorizontalAlignment="Left" Margin="225,150,0,0" VerticalAlignment="Top" Width="75" Click="Click_enviar" Background="White"/>
+        <Button x:Name="Btn_CentroIzq" Content="&lt;---" HorizontalAlignment="Left" Margin="225,200,0,0" VerticalAlignment="Top" Width="75" Click="Click_enviar" Background="White"/>
+        <Button x:Name="Btn_CentroDecha" Content="---&gt;" HorizontalAlignment="Left" Margin="495,150,0,0" VerticalAlignment="Top" Width="75" Click="Click_enviar" Background="White"/>
+        <Button x:Name="Btn_DechaCentro" Content="&lt;---" HorizontalAlignment="Left" Margin="495,200,0,0" VerticalAlignment="Top" Width="75" Click="Click_enviar" Background="White"/>
 
     </Grid>
 </Window>
