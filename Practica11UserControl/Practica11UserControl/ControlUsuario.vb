@@ -16,12 +16,17 @@ Public Class ControlUsuario
         End Set
     End Property
 
-    Private Sub MiBoton_Click(sender As Object, e As EventArgs)
-        MiLista.Items.Add(MiTexto.Text)
+    Private Sub MiBoton_Click(sender As Object, e As EventArgs) Handles MiBoton.Click
+        MiLista.Items.Clear()
     End Sub
 
     Private Sub ControlUsuario_Load(sender As Object, e As EventArgs) Handles Me.Load
         MiTexto.Text = Me.TextoInicial
     End Sub
 
+    Private Sub MiTexto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MiTexto.KeyPress
+        If Asc(e.KeyChar) = Keys.Enter Then
+            MiLista.Items.Add(MiTexto.Text)
+        End If
+    End Sub
 End Class
