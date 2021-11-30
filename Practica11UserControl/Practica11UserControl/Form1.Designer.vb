@@ -22,50 +22,60 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.MiControl = New Practica11UserControl.ControlUsuario()
-        Me.ControlUsuario1 = New Practica11UserControl.ControlUsuario()
-        Me.ControlUsuario2 = New Practica11UserControl.ControlUsuario()
+        Me.ControlDecha = New Practica11UserControl.ControlUsuario()
+        Me.ControlCentro = New Practica11UserControl.ControlUsuario()
+        Me.ControlIzq = New Practica11UserControl.ControlUsuario()
         Me.SuspendLayout()
         '
-        'MiControl
+        'ControlDecha
         '
-        Me.MiControl.Location = New System.Drawing.Point(47, 101)
-        Me.MiControl.Name = "MiControl"
-        Me.MiControl.Size = New System.Drawing.Size(183, 249)
-        Me.MiControl.TabIndex = 0
-        Me.MiControl.TextoInicial = "Ejemplo"
+        Me.ControlDecha.AllowDrop = True
+        'Me.ControlDecha.ElementoDrop = Nothing
+        Me.ControlDecha.Location = New System.Drawing.Point(764, 124)
+        Me.ControlDecha.Margin = New System.Windows.Forms.Padding(5)
+        Me.ControlDecha.Name = "ControlDecha"
+        Me.ControlDecha.Size = New System.Drawing.Size(244, 306)
+        Me.ControlDecha.TabIndex = 2
+        Me.ControlDecha.TextoInicial = "Ejemplo"
         '
-        'ControlUsuario1
+        'ControlCentro
         '
-        Me.ControlUsuario1.Location = New System.Drawing.Point(308, 101)
-        Me.ControlUsuario1.Name = "ControlUsuario1"
-        Me.ControlUsuario1.Size = New System.Drawing.Size(183, 249)
-        Me.ControlUsuario1.TabIndex = 1
-        Me.ControlUsuario1.TextoInicial = "Ejemplo"
+        Me.ControlCentro.AllowDrop = True
+        'Me.ControlCentro.ElementoDrop = Nothing
+        Me.ControlCentro.Location = New System.Drawing.Point(411, 124)
+        Me.ControlCentro.Margin = New System.Windows.Forms.Padding(5)
+        Me.ControlCentro.Name = "ControlCentro"
+        Me.ControlCentro.Size = New System.Drawing.Size(244, 306)
+        Me.ControlCentro.TabIndex = 1
+        Me.ControlCentro.TextoInicial = "Ejemplo"
         '
-        'ControlUsuario2
+        'ControlIzq
         '
-        Me.ControlUsuario2.Location = New System.Drawing.Point(573, 101)
-        Me.ControlUsuario2.Name = "ControlUsuario2"
-        Me.ControlUsuario2.Size = New System.Drawing.Size(183, 249)
-        Me.ControlUsuario2.TabIndex = 2
-        Me.ControlUsuario2.TextoInicial = "Ejemplo"
+        Me.ControlIzq.AllowDrop = True
+        'Me.ControlIzq.ElementoDrop = Nothing
+        Me.ControlIzq.Location = New System.Drawing.Point(63, 124)
+        Me.ControlIzq.Margin = New System.Windows.Forms.Padding(5)
+        Me.ControlIzq.Name = "ControlIzq"
+        Me.ControlIzq.Size = New System.Drawing.Size(244, 306)
+        Me.ControlIzq.TabIndex = 0
+        Me.ControlIzq.TextoInicial = "Ejemplo"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ControlUsuario2)
-        Me.Controls.Add(Me.ControlUsuario1)
-        Me.Controls.Add(Me.MiControl)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.Controls.Add(Me.ControlDecha)
+        Me.Controls.Add(Me.ControlCentro)
+        Me.Controls.Add(Me.ControlIzq)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents MiControl As ControlUsuario
-    Friend WithEvents ControlUsuario1 As ControlUsuario
-    Friend WithEvents ControlUsuario2 As ControlUsuario
+    Friend WithEvents ControlIzq As ControlUsuario
+    Friend WithEvents ControlCentro As ControlUsuario
+    Friend WithEvents ControlDecha As ControlUsuario
 End Class

@@ -29,38 +29,45 @@ Partial Class ControlUsuario
         '
         'MiLista
         '
+        Me.MiLista.AllowDrop = True
         Me.MiLista.FormattingEnabled = True
+        Me.MiLista.ItemHeight = 16
         Me.MiLista.Items.AddRange(New Object() {"Rojo", "Azul", "Verde", "Amarillo"})
-        Me.MiLista.Location = New System.Drawing.Point(16, 61)
+        Me.MiLista.Location = New System.Drawing.Point(21, 75)
+        Me.MiLista.Margin = New System.Windows.Forms.Padding(4)
         Me.MiLista.Name = "MiLista"
-        Me.MiLista.Size = New System.Drawing.Size(151, 134)
+        Me.MiLista.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
+        Me.MiLista.Size = New System.Drawing.Size(200, 164)
         Me.MiLista.TabIndex = 0
         '
         'MiTexto
         '
-        Me.MiTexto.Location = New System.Drawing.Point(17, 218)
+        Me.MiTexto.Location = New System.Drawing.Point(23, 268)
+        Me.MiTexto.Margin = New System.Windows.Forms.Padding(4)
         Me.MiTexto.Name = "MiTexto"
-        Me.MiTexto.Size = New System.Drawing.Size(151, 20)
+        Me.MiTexto.Size = New System.Drawing.Size(200, 22)
         Me.MiTexto.TabIndex = 1
         '
         'MiBoton
         '
-        Me.MiBoton.Location = New System.Drawing.Point(17, 20)
+        Me.MiBoton.Location = New System.Drawing.Point(23, 25)
+        Me.MiBoton.Margin = New System.Windows.Forms.Padding(4)
         Me.MiBoton.Name = "MiBoton"
-        Me.MiBoton.Size = New System.Drawing.Size(150, 23)
+        Me.MiBoton.Size = New System.Drawing.Size(200, 28)
         Me.MiBoton.TabIndex = 3
         Me.MiBoton.Text = "Borrar lista"
         Me.MiBoton.UseVisualStyleBackColor = True
         '
         'ControlUsuario
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.MiBoton)
         Me.Controls.Add(Me.MiTexto)
         Me.Controls.Add(Me.MiLista)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ControlUsuario"
-        Me.Size = New System.Drawing.Size(186, 257)
+        Me.Size = New System.Drawing.Size(248, 316)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
