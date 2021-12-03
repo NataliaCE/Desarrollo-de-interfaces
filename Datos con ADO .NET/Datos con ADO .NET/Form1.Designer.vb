@@ -38,7 +38,8 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.MdiWindowListItem = Me.VentanasToolStripMenuItem
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1055, 28)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(902, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -46,41 +47,42 @@ Partial Class Form1
         '
         Me.AbrirToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesYSusPedidosToolStripMenuItem, Me.CategoriasYSusProductosToolStripMenuItem, Me.ProveedoresYSusProductosToolStripMenuItem})
         Me.AbrirToolStripMenuItem.Name = "AbrirToolStripMenuItem"
-        Me.AbrirToolStripMenuItem.Size = New System.Drawing.Size(65, 24)
+        Me.AbrirToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.AbrirToolStripMenuItem.Text = "Abrir..."
         '
         'ClientesYSusPedidosToolStripMenuItem
         '
         Me.ClientesYSusPedidosToolStripMenuItem.Name = "ClientesYSusPedidosToolStripMenuItem"
-        Me.ClientesYSusPedidosToolStripMenuItem.Size = New System.Drawing.Size(280, 26)
+        Me.ClientesYSusPedidosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.ClientesYSusPedidosToolStripMenuItem.Text = "Clientes y sus pedidos"
         '
         'CategoriasYSusProductosToolStripMenuItem
         '
         Me.CategoriasYSusProductosToolStripMenuItem.Name = "CategoriasYSusProductosToolStripMenuItem"
-        Me.CategoriasYSusProductosToolStripMenuItem.Size = New System.Drawing.Size(280, 26)
+        Me.CategoriasYSusProductosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.CategoriasYSusProductosToolStripMenuItem.Text = "Categorias y sus productos"
         '
         'ProveedoresYSusProductosToolStripMenuItem
         '
         Me.ProveedoresYSusProductosToolStripMenuItem.Name = "ProveedoresYSusProductosToolStripMenuItem"
-        Me.ProveedoresYSusProductosToolStripMenuItem.Size = New System.Drawing.Size(280, 26)
+        Me.ProveedoresYSusProductosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.ProveedoresYSusProductosToolStripMenuItem.Text = "Proveedores y sus productos"
         '
         'VentanasToolStripMenuItem
         '
         Me.VentanasToolStripMenuItem.Name = "VentanasToolStripMenuItem"
-        Me.VentanasToolStripMenuItem.Size = New System.Drawing.Size(82, 24)
+        Me.VentanasToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
         Me.VentanasToolStripMenuItem.Text = "Ventanas"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1055, 621)
+        Me.ClientSize = New System.Drawing.Size(902, 560)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.MenuStrip1.ResumeLayout(False)
