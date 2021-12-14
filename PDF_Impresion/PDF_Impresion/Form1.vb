@@ -12,7 +12,18 @@
 
     End Sub
 
-    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+    '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    'IMPRIMIR en printdoc+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+    Friend WithEvents MiPrint As PrintPreviewDialog
+
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        MiPrint = New PrintPreviewDialog
+
+        'Rellena el documento previo
+
+
+        MiPrint.ShowDialog()
     End Sub
 End Class
