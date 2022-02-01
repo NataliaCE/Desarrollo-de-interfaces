@@ -39,11 +39,11 @@ Partial Class Form1
         Me.Lbl_periodo = New System.Windows.Forms.Label()
         Me.Cbx_periodo = New System.Windows.Forms.ComboBox()
         Me.Gb_datosPersonales = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Lbl_obligatorio1 = New System.Windows.Forms.Label()
+        Me.Err_dni = New System.Windows.Forms.Label()
+        Me.Err_apellidos = New System.Windows.Forms.Label()
+        Me.Err_nombre = New System.Windows.Forms.Label()
         Me.Gb_empresa = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Err_periodo = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Lbl_obligatorio = New System.Windows.Forms.Label()
         Me.btn_enviar = New System.Windows.Forms.Button()
@@ -80,7 +80,7 @@ Partial Class Form1
         Me.tb_nombre.Name = "tb_nombre"
         Me.tb_nombre.Size = New System.Drawing.Size(165, 23)
         Me.tb_nombre.TabIndex = 2
-        Me.tb_nombre.Tag = "nombre"
+        Me.tb_nombre.Tag = ""
         '
         'Lbl_apellidos
         '
@@ -100,7 +100,7 @@ Partial Class Form1
         Me.tb_apellido.Name = "tb_apellido"
         Me.tb_apellido.Size = New System.Drawing.Size(167, 23)
         Me.tb_apellido.TabIndex = 4
-        Me.tb_apellido.Tag = "apellidos"
+        Me.tb_apellido.Tag = ""
         '
         'tb_dni
         '
@@ -109,7 +109,7 @@ Partial Class Form1
         Me.tb_dni.Name = "tb_dni"
         Me.tb_dni.Size = New System.Drawing.Size(165, 23)
         Me.tb_dni.TabIndex = 6
-        Me.tb_dni.Tag = "dni"
+        Me.tb_dni.Tag = ""
         '
         'Lbl_dni
         '
@@ -223,9 +223,9 @@ Partial Class Form1
         '
         'Gb_datosPersonales
         '
-        Me.Gb_datosPersonales.Controls.Add(Me.Label2)
-        Me.Gb_datosPersonales.Controls.Add(Me.Label1)
-        Me.Gb_datosPersonales.Controls.Add(Me.Lbl_obligatorio1)
+        Me.Gb_datosPersonales.Controls.Add(Me.Err_dni)
+        Me.Gb_datosPersonales.Controls.Add(Me.Err_apellidos)
+        Me.Gb_datosPersonales.Controls.Add(Me.Err_nombre)
         Me.Gb_datosPersonales.Controls.Add(Me.tb_nombre)
         Me.Gb_datosPersonales.Controls.Add(Me.Lbl_nombre)
         Me.Gb_datosPersonales.Controls.Add(Me.Lbl_apellidos)
@@ -242,45 +242,45 @@ Partial Class Form1
         Me.Gb_datosPersonales.TabStop = False
         Me.Gb_datosPersonales.Text = "Datos personales"
         '
-        'Label2
+        'Err_dni
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(48, 137)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(13, 17)
-        Me.Label2.TabIndex = 17
-        Me.Label2.Tag = "dni"
-        Me.Label2.Text = "*"
+        Me.Err_dni.AutoSize = True
+        Me.Err_dni.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Err_dni.ForeColor = System.Drawing.Color.Red
+        Me.Err_dni.Location = New System.Drawing.Point(48, 137)
+        Me.Err_dni.Name = "Err_dni"
+        Me.Err_dni.Size = New System.Drawing.Size(13, 17)
+        Me.Err_dni.TabIndex = 17
+        Me.Err_dni.Tag = "dni"
+        Me.Err_dni.Text = "*"
         '
-        'Label1
+        'Err_apellidos
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(82, 82)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(13, 17)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Tag = "apellidos"
-        Me.Label1.Text = "*"
+        Me.Err_apellidos.AutoSize = True
+        Me.Err_apellidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Err_apellidos.ForeColor = System.Drawing.Color.Red
+        Me.Err_apellidos.Location = New System.Drawing.Point(82, 82)
+        Me.Err_apellidos.Name = "Err_apellidos"
+        Me.Err_apellidos.Size = New System.Drawing.Size(13, 17)
+        Me.Err_apellidos.TabIndex = 16
+        Me.Err_apellidos.Tag = "apellidos"
+        Me.Err_apellidos.Text = "*"
         '
-        'Lbl_obligatorio1
+        'Err_nombre
         '
-        Me.Lbl_obligatorio1.AutoSize = True
-        Me.Lbl_obligatorio1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_obligatorio1.ForeColor = System.Drawing.Color.Red
-        Me.Lbl_obligatorio1.Location = New System.Drawing.Point(73, 27)
-        Me.Lbl_obligatorio1.Name = "Lbl_obligatorio1"
-        Me.Lbl_obligatorio1.Size = New System.Drawing.Size(13, 17)
-        Me.Lbl_obligatorio1.TabIndex = 15
-        Me.Lbl_obligatorio1.Tag = "nombre"
-        Me.Lbl_obligatorio1.Text = "*"
+        Me.Err_nombre.AutoSize = True
+        Me.Err_nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Err_nombre.ForeColor = System.Drawing.Color.Red
+        Me.Err_nombre.Location = New System.Drawing.Point(73, 27)
+        Me.Err_nombre.Name = "Err_nombre"
+        Me.Err_nombre.Size = New System.Drawing.Size(13, 17)
+        Me.Err_nombre.TabIndex = 15
+        Me.Err_nombre.Tag = "nombre"
+        Me.Err_nombre.Text = "*"
         '
         'Gb_empresa
         '
-        Me.Gb_empresa.Controls.Add(Me.Label5)
+        Me.Gb_empresa.Controls.Add(Me.Err_periodo)
         Me.Gb_empresa.Controls.Add(Me.Label4)
         Me.Gb_empresa.Controls.Add(Me.Lbl_departamento)
         Me.Gb_empresa.Controls.Add(Me.Pnl_radio)
@@ -294,17 +294,17 @@ Partial Class Form1
         Me.Gb_empresa.TabStop = False
         Me.Gb_empresa.Text = "Datos de empresa"
         '
-        'Label5
+        'Err_periodo
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Red
-        Me.Label5.Location = New System.Drawing.Point(148, 157)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(13, 17)
-        Me.Label5.TabIndex = 16
-        Me.Label5.Tag = "periodo"
-        Me.Label5.Text = "*"
+        Me.Err_periodo.AutoSize = True
+        Me.Err_periodo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Err_periodo.ForeColor = System.Drawing.Color.Red
+        Me.Err_periodo.Location = New System.Drawing.Point(148, 157)
+        Me.Err_periodo.Name = "Err_periodo"
+        Me.Err_periodo.Size = New System.Drawing.Size(13, 17)
+        Me.Err_periodo.TabIndex = 16
+        Me.Err_periodo.Tag = "periodo"
+        Me.Err_periodo.Text = "*"
         '
         'Label4
         '
@@ -384,10 +384,10 @@ Partial Class Form1
     Friend WithEvents Cbx_periodo As ComboBox
     Friend WithEvents Gb_datosPersonales As GroupBox
     Friend WithEvents Gb_empresa As GroupBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Lbl_obligatorio1 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents Err_dni As Label
+    Friend WithEvents Err_apellidos As Label
+    Friend WithEvents Err_nombre As Label
+    Friend WithEvents Err_periodo As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Lbl_obligatorio As Label
     Friend WithEvents btn_enviar As Button

@@ -1,25 +1,30 @@
 ﻿Public Class Form1
-    Dim nombre
-    Dim apellidos
-    Dim dni
-    Dim fecha
-    Dim dpto
-    Dim periodo
-    Private Sub btn_enviar_Click(sender As Object, e As EventArgs) Handles btn_enviar.Click
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        AsignarTextBox()
     End Sub
 
-    Private Sub Comprobar()
-        tb_nombre.Text = nombre
-        tb_apellido.Text = apellidos
-        tb_dni.Text = dni
-        dtp_fecha.Value = fecha
-        For Each radio As RadioButton In Pnl_radio.Controls
-            If radio.Checked Then
-                radio.Text = dpto
+    Private Sub btn_enviar_Click(sender As Object, e As EventArgs) Handles btn_enviar.Click
+        AsignarTextBox()
+        Comprobar()
+    End Sub
+
+    Public Sub AsignarTextBox()
+        tb_nombre.Tag = Err_nombre
+        tb_apellido.Tag = Err_apellidos
+        tb_dni.Tag = Err_dni
+    End Sub
+
+    Public Sub Comprobar()
+        Dim obliga As Label
+        For Each valor In Gb_datosPersonales.Controls
+            If TypeOf valor Is System.Windows.Forms.TextBox Then
+                obliga = valor.tag
+                If valor.text = "" Then
+
+                End If
             End If
         Next
-        Cbx_periodo.SelectedItem = periodo
 
     End Sub
 End Class
