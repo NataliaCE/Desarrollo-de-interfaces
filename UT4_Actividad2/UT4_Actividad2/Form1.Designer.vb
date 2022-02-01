@@ -44,7 +44,7 @@ Partial Class Form1
         Me.Err_nombre = New System.Windows.Forms.Label()
         Me.Gb_empresa = New System.Windows.Forms.GroupBox()
         Me.Err_periodo = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Err_depto = New System.Windows.Forms.Label()
         Me.Lbl_obligatorio = New System.Windows.Forms.Label()
         Me.btn_enviar = New System.Windows.Forms.Button()
         Me.Pnl_radio.SuspendLayout()
@@ -190,13 +190,11 @@ Partial Class Form1
         'Rb_finanzas
         '
         Me.Rb_finanzas.AutoSize = True
-        Me.Rb_finanzas.Checked = True
         Me.Rb_finanzas.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rb_finanzas.Location = New System.Drawing.Point(27, 3)
         Me.Rb_finanzas.Name = "Rb_finanzas"
         Me.Rb_finanzas.Size = New System.Drawing.Size(83, 21)
         Me.Rb_finanzas.TabIndex = 0
-        Me.Rb_finanzas.TabStop = True
         Me.Rb_finanzas.Text = "Finanzas"
         Me.Rb_finanzas.UseVisualStyleBackColor = True
         '
@@ -281,7 +279,7 @@ Partial Class Form1
         'Gb_empresa
         '
         Me.Gb_empresa.Controls.Add(Me.Err_periodo)
-        Me.Gb_empresa.Controls.Add(Me.Label4)
+        Me.Gb_empresa.Controls.Add(Me.Err_depto)
         Me.Gb_empresa.Controls.Add(Me.Lbl_departamento)
         Me.Gb_empresa.Controls.Add(Me.Pnl_radio)
         Me.Gb_empresa.Controls.Add(Me.Cbx_periodo)
@@ -306,17 +304,17 @@ Partial Class Form1
         Me.Err_periodo.Tag = "periodo"
         Me.Err_periodo.Text = "*"
         '
-        'Label4
+        'Err_depto
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(196, 27)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(13, 17)
-        Me.Label4.TabIndex = 16
-        Me.Label4.Tag = "dept"
-        Me.Label4.Text = "*"
+        Me.Err_depto.AutoSize = True
+        Me.Err_depto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Err_depto.ForeColor = System.Drawing.Color.Red
+        Me.Err_depto.Location = New System.Drawing.Point(196, 27)
+        Me.Err_depto.Name = "Err_depto"
+        Me.Err_depto.Size = New System.Drawing.Size(13, 17)
+        Me.Err_depto.TabIndex = 16
+        Me.Err_depto.Tag = "dept"
+        Me.Err_depto.Text = "*"
         '
         'Lbl_obligatorio
         '
@@ -388,7 +386,7 @@ Partial Class Form1
     Friend WithEvents Err_apellidos As Label
     Friend WithEvents Err_nombre As Label
     Friend WithEvents Err_periodo As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents Err_depto As Label
     Friend WithEvents Lbl_obligatorio As Label
     Friend WithEvents btn_enviar As Button
 End Class
