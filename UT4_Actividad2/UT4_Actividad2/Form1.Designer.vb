@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Lbl_titulo = New System.Windows.Forms.Label()
         Me.Lbl_nombre = New System.Windows.Forms.Label()
@@ -47,6 +47,8 @@ Partial Class Form1
         Me.Err_depto = New System.Windows.Forms.Label()
         Me.Lbl_obligatorio = New System.Windows.Forms.Label()
         Me.btn_enviar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Pnl_radio.SuspendLayout()
         Me.Gb_datosPersonales.SuspendLayout()
         Me.Gb_empresa.SuspendLayout()
@@ -55,12 +57,12 @@ Partial Class Form1
         'Lbl_titulo
         '
         Me.Lbl_titulo.AutoSize = True
-        Me.Lbl_titulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_titulo.Location = New System.Drawing.Point(35, 35)
+        Me.Lbl_titulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_titulo.Location = New System.Drawing.Point(220, 28)
         Me.Lbl_titulo.Name = "Lbl_titulo"
-        Me.Lbl_titulo.Size = New System.Drawing.Size(204, 24)
+        Me.Lbl_titulo.Size = New System.Drawing.Size(310, 26)
         Me.Lbl_titulo.TabIndex = 0
-        Me.Lbl_titulo.Text = "Registro de personal"
+        Me.Lbl_titulo.Text = "REGISTRO DE PERSONAL"
         '
         'Lbl_nombre
         '
@@ -202,7 +204,7 @@ Partial Class Form1
         '
         Me.Lbl_periodo.AutoSize = True
         Me.Lbl_periodo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_periodo.Location = New System.Drawing.Point(22, 157)
+        Me.Lbl_periodo.Location = New System.Drawing.Point(22, 160)
         Me.Lbl_periodo.Name = "Lbl_periodo"
         Me.Lbl_periodo.Size = New System.Drawing.Size(130, 17)
         Me.Lbl_periodo.TabIndex = 11
@@ -213,7 +215,7 @@ Partial Class Form1
         '
         Me.Cbx_periodo.FormattingEnabled = True
         Me.Cbx_periodo.Items.AddRange(New Object() {"Matutino (08:00 - 14:00)", "Vespertino (14:00 - 22:00)", "Nocturno (22:00 - 08:00)"})
-        Me.Cbx_periodo.Location = New System.Drawing.Point(25, 177)
+        Me.Cbx_periodo.Location = New System.Drawing.Point(25, 180)
         Me.Cbx_periodo.Name = "Cbx_periodo"
         Me.Cbx_periodo.Size = New System.Drawing.Size(231, 23)
         Me.Cbx_periodo.TabIndex = 12
@@ -233,9 +235,9 @@ Partial Class Form1
         Me.Gb_datosPersonales.Controls.Add(Me.tb_dni)
         Me.Gb_datosPersonales.Controls.Add(Me.Lbl_)
         Me.Gb_datosPersonales.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Gb_datosPersonales.Location = New System.Drawing.Point(54, 83)
+        Me.Gb_datosPersonales.Location = New System.Drawing.Point(74, 119)
         Me.Gb_datosPersonales.Name = "Gb_datosPersonales"
-        Me.Gb_datosPersonales.Size = New System.Drawing.Size(272, 248)
+        Me.Gb_datosPersonales.Size = New System.Drawing.Size(272, 251)
         Me.Gb_datosPersonales.TabIndex = 13
         Me.Gb_datosPersonales.TabStop = False
         Me.Gb_datosPersonales.Text = "Datos personales"
@@ -285,7 +287,7 @@ Partial Class Form1
         Me.Gb_empresa.Controls.Add(Me.Cbx_periodo)
         Me.Gb_empresa.Controls.Add(Me.Lbl_periodo)
         Me.Gb_empresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Gb_empresa.Location = New System.Drawing.Point(413, 83)
+        Me.Gb_empresa.Location = New System.Drawing.Point(433, 119)
         Me.Gb_empresa.Name = "Gb_empresa"
         Me.Gb_empresa.Size = New System.Drawing.Size(291, 251)
         Me.Gb_empresa.TabIndex = 14
@@ -297,7 +299,7 @@ Partial Class Form1
         Me.Err_periodo.AutoSize = True
         Me.Err_periodo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Err_periodo.ForeColor = System.Drawing.Color.Red
-        Me.Err_periodo.Location = New System.Drawing.Point(148, 157)
+        Me.Err_periodo.Location = New System.Drawing.Point(148, 160)
         Me.Err_periodo.Name = "Err_periodo"
         Me.Err_periodo.Size = New System.Drawing.Size(13, 17)
         Me.Err_periodo.TabIndex = 16
@@ -321,7 +323,7 @@ Partial Class Form1
         Me.Lbl_obligatorio.AutoSize = True
         Me.Lbl_obligatorio.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_obligatorio.ForeColor = System.Drawing.Color.Red
-        Me.Lbl_obligatorio.Location = New System.Drawing.Point(53, 357)
+        Me.Lbl_obligatorio.Location = New System.Drawing.Point(71, 378)
         Me.Lbl_obligatorio.Name = "Lbl_obligatorio"
         Me.Lbl_obligatorio.Size = New System.Drawing.Size(155, 17)
         Me.Lbl_obligatorio.TabIndex = 18
@@ -333,12 +335,32 @@ Partial Class Form1
         Me.btn_enviar.BackColor = System.Drawing.Color.Ivory
         Me.btn_enviar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_enviar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_enviar.Location = New System.Drawing.Point(306, 405)
+        Me.btn_enviar.Location = New System.Drawing.Point(322, 441)
         Me.btn_enviar.Name = "btn_enviar"
         Me.btn_enviar.Size = New System.Drawing.Size(118, 45)
         Me.btn_enviar.TabIndex = 19
         Me.btn_enviar.Text = "Enviar"
         Me.btn_enviar.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(71, 84)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(119, 17)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Tag = ""
+        Me.Label1.Text = "Nº de Registro:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(196, 81)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(89, 23)
+        Me.TextBox1.TabIndex = 18
+        Me.TextBox1.Tag = ""
         '
         'Form1
         '
@@ -346,6 +368,8 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Ivory
         Me.ClientSize = New System.Drawing.Size(800, 514)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_enviar)
         Me.Controls.Add(Me.Lbl_obligatorio)
         Me.Controls.Add(Me.Gb_empresa)
@@ -389,4 +413,6 @@ Partial Class Form1
     Friend WithEvents Err_depto As Label
     Friend WithEvents Lbl_obligatorio As Label
     Friend WithEvents btn_enviar As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

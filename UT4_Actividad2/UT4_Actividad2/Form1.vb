@@ -1,12 +1,23 @@
-﻿Public Class Form1
+﻿Imports System.Data.SqlClient
+
+Public Class Form1
     Dim nombre
     Dim apellidos
     Dim dni
     Dim fecha
     Dim depto
     Dim periodo
+    Dim MiConexionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BaseDatos.mdf;Integrated Security=True"
+    Dim MiConexion As New SqlConnection(MiConexionString)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Try
+            MiConexion.Open()
+            MessageBox.Show("Conexion exitosa.")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
         AsignarTextBox()
     End Sub
 
@@ -70,4 +81,5 @@
             Return False
         End If
     End Function
+
 End Class
