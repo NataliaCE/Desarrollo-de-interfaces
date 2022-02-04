@@ -48,7 +48,7 @@ Partial Class Form1
         Me.Lbl_obligatorio = New System.Windows.Forms.Label()
         Me.btn_enviar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.lbl_registro = New System.Windows.Forms.Label()
         Me.Pnl_radio.SuspendLayout()
         Me.Gb_datosPersonales.SuspendLayout()
         Me.Gb_empresa.SuspendLayout()
@@ -175,6 +175,7 @@ Partial Class Form1
         Me.Rb_logistica.Name = "Rb_logistica"
         Me.Rb_logistica.Size = New System.Drawing.Size(82, 21)
         Me.Rb_logistica.TabIndex = 2
+        Me.Rb_logistica.Tag = "3"
         Me.Rb_logistica.Text = "Logística"
         Me.Rb_logistica.UseVisualStyleBackColor = True
         '
@@ -186,6 +187,7 @@ Partial Class Form1
         Me.Rb_RRHH.Name = "Rb_RRHH"
         Me.Rb_RRHH.Size = New System.Drawing.Size(148, 21)
         Me.Rb_RRHH.TabIndex = 1
+        Me.Rb_RRHH.Tag = "2"
         Me.Rb_RRHH.Text = "Recursos humanos"
         Me.Rb_RRHH.UseVisualStyleBackColor = True
         '
@@ -197,6 +199,7 @@ Partial Class Form1
         Me.Rb_finanzas.Name = "Rb_finanzas"
         Me.Rb_finanzas.Size = New System.Drawing.Size(83, 21)
         Me.Rb_finanzas.TabIndex = 0
+        Me.Rb_finanzas.Tag = "1"
         Me.Rb_finanzas.Text = "Finanzas"
         Me.Rb_finanzas.UseVisualStyleBackColor = True
         '
@@ -353,14 +356,16 @@ Partial Class Form1
         Me.Label1.Tag = ""
         Me.Label1.Text = "Nº de Registro:"
         '
-        'TextBox1
+        'lbl_registro
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(196, 81)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(89, 23)
-        Me.TextBox1.TabIndex = 18
-        Me.TextBox1.Tag = ""
+        Me.lbl_registro.AutoSize = True
+        Me.lbl_registro.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_registro.Location = New System.Drawing.Point(189, 81)
+        Me.lbl_registro.Name = "lbl_registro"
+        Me.lbl_registro.Size = New System.Drawing.Size(21, 22)
+        Me.lbl_registro.TabIndex = 20
+        Me.lbl_registro.Tag = ""
+        Me.lbl_registro.Text = "1"
         '
         'Form1
         '
@@ -368,7 +373,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Ivory
         Me.ClientSize = New System.Drawing.Size(800, 514)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.lbl_registro)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_enviar)
         Me.Controls.Add(Me.Lbl_obligatorio)
@@ -414,5 +419,5 @@ Partial Class Form1
     Friend WithEvents Lbl_obligatorio As Label
     Friend WithEvents btn_enviar As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lbl_registro As Label
 End Class
