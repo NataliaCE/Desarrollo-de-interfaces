@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Data.SqlClient
+Imports System.IO
 
 Public Class Form1
     Dim registro As Integer
@@ -9,7 +10,10 @@ Public Class Form1
     Dim fecha As String
     Dim depto As Integer
     Dim periodo As String
-    Dim MiConexionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\DAM2Alu3\source\repos\UT4_Actividad2\UT4_Actividad2\BaseDatos.mdf;Integrated Security=True"
+    Dim directorio As String = Directory.GetCurrentDirectory()
+    Dim dir As DirectoryInfo = Directory.GetParent(directorio)
+    Dim carpeta As DirectoryInfo = Directory.GetParent(dir.ToString())
+    Dim MiConexionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & carpeta.ToString() & "\BaseDatos.mdf;Integrated Security=True"
     Dim MiConexion As New SqlConnection(MiConexionString)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
