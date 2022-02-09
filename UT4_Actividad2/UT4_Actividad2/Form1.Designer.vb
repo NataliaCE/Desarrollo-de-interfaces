@@ -39,6 +39,7 @@ Partial Class Form1
         Me.Lbl_periodo = New System.Windows.Forms.Label()
         Me.Cbx_periodo = New System.Windows.Forms.ComboBox()
         Me.Gb_datosPersonales = New System.Windows.Forms.GroupBox()
+        Me.Err_fecha = New System.Windows.Forms.Label()
         Me.Err_dni = New System.Windows.Forms.Label()
         Me.Err_apellidos = New System.Windows.Forms.Label()
         Me.Err_nombre = New System.Windows.Forms.Label()
@@ -226,6 +227,7 @@ Partial Class Form1
         '
         'Gb_datosPersonales
         '
+        Me.Gb_datosPersonales.Controls.Add(Me.Err_fecha)
         Me.Gb_datosPersonales.Controls.Add(Me.Err_dni)
         Me.Gb_datosPersonales.Controls.Add(Me.Err_apellidos)
         Me.Gb_datosPersonales.Controls.Add(Me.Err_nombre)
@@ -244,6 +246,17 @@ Partial Class Form1
         Me.Gb_datosPersonales.TabIndex = 13
         Me.Gb_datosPersonales.TabStop = False
         Me.Gb_datosPersonales.Text = "Datos personales"
+        '
+        'Err_fecha
+        '
+        Me.Err_fecha.AutoSize = True
+        Me.Err_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Err_fecha.ForeColor = System.Drawing.Color.Red
+        Me.Err_fecha.Location = New System.Drawing.Point(157, 193)
+        Me.Err_fecha.Name = "Err_fecha"
+        Me.Err_fecha.Size = New System.Drawing.Size(0, 17)
+        Me.Err_fecha.TabIndex = 18
+        Me.Err_fecha.Tag = "fecha"
         '
         'Err_dni
         '
@@ -420,4 +433,5 @@ Partial Class Form1
     Friend WithEvents btn_enviar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents lbl_registro As Label
+    Friend WithEvents Err_fecha As Label
 End Class

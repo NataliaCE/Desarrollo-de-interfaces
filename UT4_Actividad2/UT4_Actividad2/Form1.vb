@@ -1,9 +1,9 @@
 ﻿Imports System.ComponentModel
 Imports System.Data.SqlClient
 Imports System.IO
+Imports System.Text.RegularExpressions
 
 Public Class Form1
-    Dim registro As Integer
     Dim nombre As String
     Dim apellidos As String
     Dim dni As String
@@ -17,6 +17,7 @@ Public Class Form1
     Dim MiConexion As New SqlConnection(MiConexionString)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         Try
             MiConexion.Open()
             MessageBox.Show("Conexion exitosa.")
@@ -47,6 +48,8 @@ Public Class Form1
     End Sub
 
     Function ComprobarDatosPersonales() As Boolean
+
+        'Nombre, apellido y dni no están vacíos
         Dim contador As Integer = 0
         Dim obliga As Label
         For Each valor In Gb_datosPersonales.Controls
@@ -61,11 +64,27 @@ Public Class Form1
             End If
         Next
 
-        Dim hoy As Date = Date.Today
-        If Not dtp_fecha.Value.Date = hoy Then
-            fecha = dtp_fecha.Value.ToShortDateString()
+        'DNI válido
+        If Not tb_dni.Text.Trim = "" Then
+            If compruebaDNI(tb_dni.Text) Then
+                Err_dni.Text = "*"
+            Else
+                Err_dni.Text = "DNI no válido"
+                contador += 1
+            End If
         End If
 
+        'Fecha de nacimiento
+        Dim fechaMinima As Date = "01/01/2006"
+        If Not dtp_fecha.Value.Date.CompareTo(fechaMinima) = -1 Then
+            contador += 1
+            Err_fecha.Text = "Fecha no válida"
+        Else
+            Err_fecha.Text = ""
+            fecha = dtp_fecha.Value.ToString("MM/dd/yyyy")
+        End If
+
+        'Obtencion de datos
         If contador > 0 Then
             Return False
         Else
@@ -79,6 +98,8 @@ Public Class Form1
     Function ComprobarDatosEmpresa() As Boolean
         Dim siRadio As Boolean = False
         Dim siCombo As Boolean = False
+
+        'Departamentos
         For Each check As RadioButton In Pnl_radio.Controls
             If check.Checked Then
                 siRadio = True
@@ -91,6 +112,7 @@ Public Class Form1
             Err_depto.Text = "*"
         End If
 
+        'Periodos
         If Cbx_periodo.SelectedIndex = -1 Then
             Err_periodo.Text = "Campo obligatorio"
         Else
@@ -98,6 +120,7 @@ Public Class Form1
             siCombo = True
             periodo = Cbx_periodo.SelectedItem.ToString()
         End If
+
 
         If siRadio And siCombo Then
             Return True
@@ -137,10 +160,23 @@ Public Class Form1
                 lbl_registro.Text = registro("total") + 1
             End If
             registro.Close()
+
         Catch ex As Exception
             Console.WriteLine(ex.Message)
-            registro.Close()
         End Try
 
     End Sub
+
+    Function compruebaDNI(d As String) As Boolean
+
+        Dim patron As String = "[0-9]{8}[a-zA-Z]"
+        Dim r As Regex = New Regex(patron)
+
+        If r.IsMatch(d) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
 End Class
