@@ -30,15 +30,24 @@ Public Class Form1
     End Sub
 
     Private Sub btn_enviar_Click(sender As Object, e As EventArgs) Handles btn_enviar.Click
-        Try
-            If ComprobarDatosPersonales() And ComprobarDatosEmpresa() Then
-                insertarDatos()
-                MessageBox.Show("Datos enviados.")
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-        obtenerRegistro()
+
+        If ComprobarDatosPersonales() And ComprobarDatosEmpresa() Then
+            insertarDatos()
+            MessageBox.Show("Datos enviados.")
+            obtenerRegistro()
+        End If
+
+        tb_nombre.Text() = ""
+        tb_apellido.Text() = ""
+        tb_dni.Text() = ""
+        dtp_fecha.Value = Date.Now()
+
+        For Each radio As RadioButton In Pnl_radio.Controls
+            radio.Checked() = False
+        Next
+
+        Cbx_periodo.SelectedIndex() = -1
+
     End Sub
 
     Public Sub AsignarTextBox()

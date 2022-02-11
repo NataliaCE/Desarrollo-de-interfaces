@@ -64,6 +64,7 @@ Partial Class Form1
         Me.Lbl_titulo.Size = New System.Drawing.Size(310, 26)
         Me.Lbl_titulo.TabIndex = 0
         Me.Lbl_titulo.Text = "REGISTRO DE PERSONAL"
+        Me.Lbl_titulo.UseWaitCursor = True
         '
         'Lbl_nombre
         '
@@ -75,6 +76,7 @@ Partial Class Form1
         Me.Lbl_nombre.TabIndex = 1
         Me.Lbl_nombre.Tag = ""
         Me.Lbl_nombre.Text = "Nombre:"
+        Me.Lbl_nombre.UseWaitCursor = True
         '
         'tb_nombre
         '
@@ -84,6 +86,7 @@ Partial Class Form1
         Me.tb_nombre.Size = New System.Drawing.Size(165, 23)
         Me.tb_nombre.TabIndex = 2
         Me.tb_nombre.Tag = ""
+        Me.tb_nombre.UseWaitCursor = True
         '
         'Lbl_apellidos
         '
@@ -95,6 +98,7 @@ Partial Class Form1
         Me.Lbl_apellidos.TabIndex = 3
         Me.Lbl_apellidos.Tag = ""
         Me.Lbl_apellidos.Text = "Apellidos:"
+        Me.Lbl_apellidos.UseWaitCursor = True
         '
         'tb_apellido
         '
@@ -104,6 +108,7 @@ Partial Class Form1
         Me.tb_apellido.Size = New System.Drawing.Size(167, 23)
         Me.tb_apellido.TabIndex = 4
         Me.tb_apellido.Tag = ""
+        Me.tb_apellido.UseWaitCursor = True
         '
         'tb_dni
         '
@@ -113,6 +118,7 @@ Partial Class Form1
         Me.tb_dni.Size = New System.Drawing.Size(165, 23)
         Me.tb_dni.TabIndex = 6
         Me.tb_dni.Tag = ""
+        Me.tb_dni.UseWaitCursor = True
         '
         'Lbl_dni
         '
@@ -124,6 +130,7 @@ Partial Class Form1
         Me.Lbl_dni.TabIndex = 5
         Me.Lbl_dni.Tag = ""
         Me.Lbl_dni.Text = "DNI:"
+        Me.Lbl_dni.UseWaitCursor = True
         '
         'Lbl_
         '
@@ -135,6 +142,7 @@ Partial Class Form1
         Me.Lbl_.TabIndex = 7
         Me.Lbl_.Tag = ""
         Me.Lbl_.Text = "Fecha de nacimiento:"
+        Me.Lbl_.UseWaitCursor = True
         '
         'dtp_fecha
         '
@@ -145,6 +153,7 @@ Partial Class Form1
         Me.dtp_fecha.Size = New System.Drawing.Size(167, 24)
         Me.dtp_fecha.TabIndex = 8
         Me.dtp_fecha.Tag = "fecha"
+        Me.dtp_fecha.UseWaitCursor = True
         '
         'Lbl_departamento
         '
@@ -156,6 +165,7 @@ Partial Class Form1
         Me.Lbl_departamento.TabIndex = 9
         Me.Lbl_departamento.Tag = ""
         Me.Lbl_departamento.Text = "Departamento autorizador:"
+        Me.Lbl_departamento.UseWaitCursor = True
         '
         'Pnl_radio
         '
@@ -167,6 +177,7 @@ Partial Class Form1
         Me.Pnl_radio.Size = New System.Drawing.Size(200, 79)
         Me.Pnl_radio.TabIndex = 10
         Me.Pnl_radio.Tag = "dept"
+        Me.Pnl_radio.UseWaitCursor = True
         '
         'Rb_logistica
         '
@@ -179,6 +190,7 @@ Partial Class Form1
         Me.Rb_logistica.Tag = "3"
         Me.Rb_logistica.Text = "Logística"
         Me.Rb_logistica.UseVisualStyleBackColor = True
+        Me.Rb_logistica.UseWaitCursor = True
         '
         'Rb_RRHH
         '
@@ -191,6 +203,7 @@ Partial Class Form1
         Me.Rb_RRHH.Tag = "2"
         Me.Rb_RRHH.Text = "Recursos humanos"
         Me.Rb_RRHH.UseVisualStyleBackColor = True
+        Me.Rb_RRHH.UseWaitCursor = True
         '
         'Rb_finanzas
         '
@@ -203,6 +216,7 @@ Partial Class Form1
         Me.Rb_finanzas.Tag = "1"
         Me.Rb_finanzas.Text = "Finanzas"
         Me.Rb_finanzas.UseVisualStyleBackColor = True
+        Me.Rb_finanzas.UseWaitCursor = True
         '
         'Lbl_periodo
         '
@@ -214,6 +228,7 @@ Partial Class Form1
         Me.Lbl_periodo.TabIndex = 11
         Me.Lbl_periodo.Tag = ""
         Me.Lbl_periodo.Text = "Periodo de acceso:"
+        Me.Lbl_periodo.UseWaitCursor = True
         '
         'Cbx_periodo
         '
@@ -224,6 +239,7 @@ Partial Class Form1
         Me.Cbx_periodo.Size = New System.Drawing.Size(231, 23)
         Me.Cbx_periodo.TabIndex = 12
         Me.Cbx_periodo.Tag = "periodo"
+        Me.Cbx_periodo.UseWaitCursor = True
         '
         'Gb_datosPersonales
         '
@@ -246,6 +262,7 @@ Partial Class Form1
         Me.Gb_datosPersonales.TabIndex = 13
         Me.Gb_datosPersonales.TabStop = False
         Me.Gb_datosPersonales.Text = "Datos personales"
+        Me.Gb_datosPersonales.UseWaitCursor = True
         '
         'Err_fecha
         '
@@ -257,6 +274,7 @@ Partial Class Form1
         Me.Err_fecha.Size = New System.Drawing.Size(0, 17)
         Me.Err_fecha.TabIndex = 18
         Me.Err_fecha.Tag = "fecha"
+        Me.Err_fecha.UseWaitCursor = True
         '
         'Err_dni
         '
@@ -269,6 +287,7 @@ Partial Class Form1
         Me.Err_dni.TabIndex = 17
         Me.Err_dni.Tag = "dni"
         Me.Err_dni.Text = "*"
+        Me.Err_dni.UseWaitCursor = True
         '
         'Err_apellidos
         '
@@ -281,6 +300,7 @@ Partial Class Form1
         Me.Err_apellidos.TabIndex = 16
         Me.Err_apellidos.Tag = "apellidos"
         Me.Err_apellidos.Text = "*"
+        Me.Err_apellidos.UseWaitCursor = True
         '
         'Err_nombre
         '
@@ -293,6 +313,7 @@ Partial Class Form1
         Me.Err_nombre.TabIndex = 15
         Me.Err_nombre.Tag = "nombre"
         Me.Err_nombre.Text = "*"
+        Me.Err_nombre.UseWaitCursor = True
         '
         'Gb_empresa
         '
@@ -309,6 +330,7 @@ Partial Class Form1
         Me.Gb_empresa.TabIndex = 14
         Me.Gb_empresa.TabStop = False
         Me.Gb_empresa.Text = "Datos de empresa"
+        Me.Gb_empresa.UseWaitCursor = True
         '
         'Err_periodo
         '
@@ -321,6 +343,7 @@ Partial Class Form1
         Me.Err_periodo.TabIndex = 16
         Me.Err_periodo.Tag = "periodo"
         Me.Err_periodo.Text = "*"
+        Me.Err_periodo.UseWaitCursor = True
         '
         'Err_depto
         '
@@ -333,6 +356,7 @@ Partial Class Form1
         Me.Err_depto.TabIndex = 16
         Me.Err_depto.Tag = "dept"
         Me.Err_depto.Text = "*"
+        Me.Err_depto.UseWaitCursor = True
         '
         'Lbl_obligatorio
         '
@@ -345,6 +369,7 @@ Partial Class Form1
         Me.Lbl_obligatorio.TabIndex = 18
         Me.Lbl_obligatorio.Tag = "nombre"
         Me.Lbl_obligatorio.Text = "(Campos obligatorios *)"
+        Me.Lbl_obligatorio.UseWaitCursor = True
         '
         'btn_enviar
         '
@@ -357,6 +382,7 @@ Partial Class Form1
         Me.btn_enviar.TabIndex = 19
         Me.btn_enviar.Text = "Enviar"
         Me.btn_enviar.UseVisualStyleBackColor = False
+        Me.btn_enviar.UseWaitCursor = True
         '
         'Label1
         '
@@ -368,6 +394,7 @@ Partial Class Form1
         Me.Label1.TabIndex = 18
         Me.Label1.Tag = ""
         Me.Label1.Text = "Nº de Registro:"
+        Me.Label1.UseWaitCursor = True
         '
         'lbl_registro
         '
@@ -379,6 +406,7 @@ Partial Class Form1
         Me.lbl_registro.TabIndex = 20
         Me.lbl_registro.Tag = ""
         Me.lbl_registro.Text = "1"
+        Me.lbl_registro.UseWaitCursor = True
         '
         'Form1
         '
@@ -394,7 +422,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Gb_datosPersonales)
         Me.Controls.Add(Me.Lbl_titulo)
         Me.Name = "Form1"
-        Me.Text = "Enviar"
+        Me.Text = "Registro de personal"
+        Me.UseWaitCursor = True
         Me.Pnl_radio.ResumeLayout(False)
         Me.Pnl_radio.PerformLayout()
         Me.Gb_datosPersonales.ResumeLayout(False)
