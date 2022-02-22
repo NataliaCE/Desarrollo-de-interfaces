@@ -1,5 +1,7 @@
 ﻿Public Class Almacen
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Btn_listar.Click
-
+    Private Sub Btn_crear_Click(sender As Object, e As EventArgs) Handles Btn_crear.Click
+        Dim formulario As New Crear_material
+        formulario.Show()
+        Me.Close()
     End Sub
 End Class

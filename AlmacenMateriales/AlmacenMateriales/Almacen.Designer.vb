@@ -29,7 +29,6 @@ Partial Class Almacen
         Me.ListarMaterialesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BorrarMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Barra_iconos = New System.Windows.Forms.ToolStrip()
-        Me.PB_logo = New System.Windows.Forms.PictureBox()
         Me.TS_anadir = New System.Windows.Forms.ToolStripButton()
         Me.TS_editar = New System.Windows.Forms.ToolStripButton()
         Me.TS_listar = New System.Windows.Forms.ToolStripButton()
@@ -39,6 +38,7 @@ Partial Class Almacen
         Me.Btn_modificar = New System.Windows.Forms.Button()
         Me.Btn_listar = New System.Windows.Forms.Button()
         Me.Btn_eliminar = New System.Windows.Forms.Button()
+        Me.PB_logo = New System.Windows.Forms.PictureBox()
         Me.Barra_menu.SuspendLayout()
         Me.Barra_iconos.SuspendLayout()
         CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,6 +46,7 @@ Partial Class Almacen
         '
         'Barra_menu
         '
+        Me.Barra_menu.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Barra_menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionesToolStripMenuItem})
         Me.Barra_menu.Location = New System.Drawing.Point(0, 0)
         Me.Barra_menu.Name = "Barra_menu"
@@ -86,7 +87,7 @@ Partial Class Almacen
         '
         'Barra_iconos
         '
-        Me.Barra_iconos.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Barra_iconos.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Barra_iconos.ImageScalingSize = New System.Drawing.Size(22, 22)
         Me.Barra_iconos.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_anadir, Me.TS_editar, Me.TS_listar, Me.TS_borrar})
         Me.Barra_iconos.Location = New System.Drawing.Point(0, 24)
@@ -94,16 +95,6 @@ Partial Class Almacen
         Me.Barra_iconos.Size = New System.Drawing.Size(800, 29)
         Me.Barra_iconos.TabIndex = 1
         Me.Barra_iconos.Text = "ToolStrip1"
-        '
-        'PB_logo
-        '
-        Me.PB_logo.Image = Global.AlmacenMateriales.My.Resources.Resources.logo
-        Me.PB_logo.Location = New System.Drawing.Point(12, 67)
-        Me.PB_logo.Name = "PB_logo"
-        Me.PB_logo.Size = New System.Drawing.Size(50, 50)
-        Me.PB_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PB_logo.TabIndex = 2
-        Me.PB_logo.TabStop = False
         '
         'TS_anadir
         '
@@ -191,10 +182,21 @@ Partial Class Almacen
         Me.Btn_eliminar.Text = "Eliminar material"
         Me.Btn_eliminar.UseVisualStyleBackColor = True
         '
+        'PB_logo
+        '
+        Me.PB_logo.Image = Global.AlmacenMateriales.My.Resources.Resources.logo
+        Me.PB_logo.Location = New System.Drawing.Point(12, 67)
+        Me.PB_logo.Name = "PB_logo"
+        Me.PB_logo.Size = New System.Drawing.Size(50, 50)
+        Me.PB_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_logo.TabIndex = 2
+        Me.PB_logo.TabStop = False
+        '
         'Almacen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Btn_eliminar)
         Me.Controls.Add(Me.Btn_listar)
