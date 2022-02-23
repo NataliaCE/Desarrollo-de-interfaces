@@ -22,6 +22,7 @@ Partial Class Almacen
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Almacen))
         Me.Barra_menu = New System.Windows.Forms.MenuStrip()
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CrearMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -64,25 +65,25 @@ Partial Class Almacen
         'CrearMaterialToolStripMenuItem
         '
         Me.CrearMaterialToolStripMenuItem.Name = "CrearMaterialToolStripMenuItem"
-        Me.CrearMaterialToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.CrearMaterialToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CrearMaterialToolStripMenuItem.Text = "Crear material"
         '
         'ModificarMaterialToolStripMenuItem
         '
         Me.ModificarMaterialToolStripMenuItem.Name = "ModificarMaterialToolStripMenuItem"
-        Me.ModificarMaterialToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.ModificarMaterialToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ModificarMaterialToolStripMenuItem.Text = "Modificar material"
         '
         'ListarMaterialesToolStripMenuItem
         '
         Me.ListarMaterialesToolStripMenuItem.Name = "ListarMaterialesToolStripMenuItem"
-        Me.ListarMaterialesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.ListarMaterialesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ListarMaterialesToolStripMenuItem.Text = "Listar materiales"
         '
         'BorrarMaterialToolStripMenuItem
         '
         Me.BorrarMaterialToolStripMenuItem.Name = "BorrarMaterialToolStripMenuItem"
-        Me.BorrarMaterialToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.BorrarMaterialToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BorrarMaterialToolStripMenuItem.Text = "Borrar material"
         '
         'Barra_iconos
@@ -104,6 +105,7 @@ Partial Class Almacen
         Me.TS_anadir.Name = "TS_anadir"
         Me.TS_anadir.Size = New System.Drawing.Size(26, 26)
         Me.TS_anadir.Text = "ToolStripButton1"
+        Me.TS_anadir.ToolTipText = "Crear material"
         '
         'TS_editar
         '
@@ -113,6 +115,7 @@ Partial Class Almacen
         Me.TS_editar.Name = "TS_editar"
         Me.TS_editar.Size = New System.Drawing.Size(26, 26)
         Me.TS_editar.Text = "ToolStripButton1"
+        Me.TS_editar.ToolTipText = "Modificar material"
         '
         'TS_listar
         '
@@ -122,6 +125,7 @@ Partial Class Almacen
         Me.TS_listar.Name = "TS_listar"
         Me.TS_listar.Size = New System.Drawing.Size(26, 26)
         Me.TS_listar.Text = "ToolStripButton2"
+        Me.TS_listar.ToolTipText = "Listar material"
         '
         'TS_borrar
         '
@@ -131,6 +135,7 @@ Partial Class Almacen
         Me.TS_borrar.Name = "TS_borrar"
         Me.TS_borrar.Size = New System.Drawing.Size(26, 26)
         Me.TS_borrar.Text = "ToolStripButton3"
+        Me.TS_borrar.ToolTipText = "Borrar material"
         '
         'Lbl_nomPantalla
         '
@@ -206,6 +211,7 @@ Partial Class Almacen
         Me.Controls.Add(Me.PB_logo)
         Me.Controls.Add(Me.Barra_iconos)
         Me.Controls.Add(Me.Barra_menu)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.Barra_menu
         Me.Name = "Almacen"
         Me.Text = "Almacén de materiales"

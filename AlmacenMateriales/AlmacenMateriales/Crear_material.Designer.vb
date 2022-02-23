@@ -22,13 +22,14 @@ Partial Class Crear_material
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Crear_material))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.Lbl_nomPantalla = New System.Windows.Forms.Label()
-        Me.PB_logo = New System.Windows.Forms.PictureBox()
         Me.TS_inicio = New System.Windows.Forms.ToolStripButton()
         Me.TS_guardar = New System.Windows.Forms.ToolStripButton()
+        Me.Lbl_nomPantalla = New System.Windows.Forms.Label()
+        Me.PB_logo = New System.Windows.Forms.PictureBox()
         Me.lbl_num_mat = New System.Windows.Forms.Label()
         Me.tb_num_mat = New System.Windows.Forms.TextBox()
         Me.lbl_material = New System.Windows.Forms.Label()
@@ -47,14 +48,16 @@ Partial Class Crear_material
         Me.cbx_pasillo = New System.Windows.Forms.ComboBox()
         Me.lbl_seccion = New System.Windows.Forms.Label()
         Me.pnl_seccion = New System.Windows.Forms.Panel()
-        Me.rb_A = New System.Windows.Forms.RadioButton()
-        Me.rb_B = New System.Windows.Forms.RadioButton()
-        Me.rb_C = New System.Windows.Forms.RadioButton()
-        Me.rb_D = New System.Windows.Forms.RadioButton()
-        Me.rb_E = New System.Windows.Forms.RadioButton()
         Me.rb_F = New System.Windows.Forms.RadioButton()
+        Me.rb_E = New System.Windows.Forms.RadioButton()
+        Me.rb_D = New System.Windows.Forms.RadioButton()
+        Me.rb_C = New System.Windows.Forms.RadioButton()
+        Me.rb_B = New System.Windows.Forms.RadioButton()
+        Me.rb_A = New System.Windows.Forms.RadioButton()
         Me.tb_stock = New System.Windows.Forms.TextBox()
         Me.lbl_stock = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.lbl_descripcion = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +91,26 @@ Partial Class Crear_material
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
+        'TS_inicio
+        '
+        Me.TS_inicio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TS_inicio.Image = Global.AlmacenMateriales.My.Resources.Resources.inicio
+        Me.TS_inicio.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TS_inicio.Name = "TS_inicio"
+        Me.TS_inicio.Size = New System.Drawing.Size(26, 26)
+        Me.TS_inicio.Text = "ToolStripButton1"
+        Me.TS_inicio.ToolTipText = "Inicio"
+        '
+        'TS_guardar
+        '
+        Me.TS_guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TS_guardar.Image = Global.AlmacenMateriales.My.Resources.Resources.guardar
+        Me.TS_guardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TS_guardar.Name = "TS_guardar"
+        Me.TS_guardar.Size = New System.Drawing.Size(26, 26)
+        Me.TS_guardar.Text = "ToolStripButton2"
+        Me.TS_guardar.ToolTipText = "Guardar"
+        '
         'Lbl_nomPantalla
         '
         Me.Lbl_nomPantalla.AutoSize = True
@@ -107,24 +130,6 @@ Partial Class Crear_material
         Me.PB_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PB_logo.TabIndex = 3
         Me.PB_logo.TabStop = False
-        '
-        'TS_inicio
-        '
-        Me.TS_inicio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.TS_inicio.Image = Global.AlmacenMateriales.My.Resources.Resources.inicio
-        Me.TS_inicio.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.TS_inicio.Name = "TS_inicio"
-        Me.TS_inicio.Size = New System.Drawing.Size(26, 26)
-        Me.TS_inicio.Text = "ToolStripButton1"
-        '
-        'TS_guardar
-        '
-        Me.TS_guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.TS_guardar.Image = Global.AlmacenMateriales.My.Resources.Resources.guardar
-        Me.TS_guardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.TS_guardar.Name = "TS_guardar"
-        Me.TS_guardar.Size = New System.Drawing.Size(26, 26)
-        Me.TS_guardar.Text = "ToolStripButton2"
         '
         'lbl_num_mat
         '
@@ -200,9 +205,10 @@ Partial Class Crear_material
         '
         'dtp_fecha
         '
+        Me.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_fecha.Location = New System.Drawing.Point(319, 271)
         Me.dtp_fecha.Name = "dtp_fecha"
-        Me.dtp_fecha.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_fecha.Size = New System.Drawing.Size(130, 20)
         Me.dtp_fecha.TabIndex = 13
         '
         'lbl_fecha
@@ -219,7 +225,7 @@ Partial Class Crear_material
         '
         Me.lbl_compra.AutoSize = True
         Me.lbl_compra.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_compra.Location = New System.Drawing.Point(183, 305)
+        Me.lbl_compra.Location = New System.Drawing.Point(183, 387)
         Me.lbl_compra.Name = "lbl_compra"
         Me.lbl_compra.Size = New System.Drawing.Size(130, 17)
         Me.lbl_compra.TabIndex = 15
@@ -227,7 +233,7 @@ Partial Class Crear_material
         '
         'tb_compra
         '
-        Me.tb_compra.Location = New System.Drawing.Point(319, 304)
+        Me.tb_compra.Location = New System.Drawing.Point(319, 386)
         Me.tb_compra.Name = "tb_compra"
         Me.tb_compra.Size = New System.Drawing.Size(74, 20)
         Me.tb_compra.TabIndex = 16
@@ -236,7 +242,7 @@ Partial Class Crear_material
         '
         Me.lbl_venta.AutoSize = True
         Me.lbl_venta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_venta.Location = New System.Drawing.Point(195, 338)
+        Me.lbl_venta.Location = New System.Drawing.Point(195, 420)
         Me.lbl_venta.Name = "lbl_venta"
         Me.lbl_venta.Size = New System.Drawing.Size(118, 17)
         Me.lbl_venta.TabIndex = 17
@@ -245,7 +251,7 @@ Partial Class Crear_material
         'tb_venta
         '
         Me.tb_venta.Enabled = False
-        Me.tb_venta.Location = New System.Drawing.Point(319, 337)
+        Me.tb_venta.Location = New System.Drawing.Point(319, 419)
         Me.tb_venta.Name = "tb_venta"
         Me.tb_venta.Size = New System.Drawing.Size(74, 20)
         Me.tb_venta.TabIndex = 18
@@ -254,7 +260,7 @@ Partial Class Crear_material
         '
         Me.lbl_pasillo.AutoSize = True
         Me.lbl_pasillo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_pasillo.Location = New System.Drawing.Point(260, 370)
+        Me.lbl_pasillo.Location = New System.Drawing.Point(260, 452)
         Me.lbl_pasillo.Name = "lbl_pasillo"
         Me.lbl_pasillo.Size = New System.Drawing.Size(53, 17)
         Me.lbl_pasillo.TabIndex = 19
@@ -264,7 +270,7 @@ Partial Class Crear_material
         '
         Me.cbx_pasillo.FormattingEnabled = True
         Me.cbx_pasillo.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8"})
-        Me.cbx_pasillo.Location = New System.Drawing.Point(319, 369)
+        Me.cbx_pasillo.Location = New System.Drawing.Point(319, 451)
         Me.cbx_pasillo.Name = "cbx_pasillo"
         Me.cbx_pasillo.Size = New System.Drawing.Size(74, 21)
         Me.cbx_pasillo.TabIndex = 20
@@ -273,7 +279,7 @@ Partial Class Crear_material
         '
         Me.lbl_seccion.AutoSize = True
         Me.lbl_seccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_seccion.Location = New System.Drawing.Point(251, 399)
+        Me.lbl_seccion.Location = New System.Drawing.Point(251, 481)
         Me.lbl_seccion.Name = "lbl_seccion"
         Me.lbl_seccion.Size = New System.Drawing.Size(62, 17)
         Me.lbl_seccion.TabIndex = 21
@@ -287,65 +293,10 @@ Partial Class Crear_material
         Me.pnl_seccion.Controls.Add(Me.rb_C)
         Me.pnl_seccion.Controls.Add(Me.rb_B)
         Me.pnl_seccion.Controls.Add(Me.rb_A)
-        Me.pnl_seccion.Location = New System.Drawing.Point(319, 396)
+        Me.pnl_seccion.Location = New System.Drawing.Point(319, 478)
         Me.pnl_seccion.Name = "pnl_seccion"
         Me.pnl_seccion.Size = New System.Drawing.Size(230, 24)
         Me.pnl_seccion.TabIndex = 22
-        '
-        'rb_A
-        '
-        Me.rb_A.AutoSize = True
-        Me.rb_A.Location = New System.Drawing.Point(3, 3)
-        Me.rb_A.Name = "rb_A"
-        Me.rb_A.Size = New System.Drawing.Size(32, 17)
-        Me.rb_A.TabIndex = 23
-        Me.rb_A.TabStop = True
-        Me.rb_A.Text = "A"
-        Me.rb_A.UseVisualStyleBackColor = True
-        '
-        'rb_B
-        '
-        Me.rb_B.AutoSize = True
-        Me.rb_B.Location = New System.Drawing.Point(41, 3)
-        Me.rb_B.Name = "rb_B"
-        Me.rb_B.Size = New System.Drawing.Size(32, 17)
-        Me.rb_B.TabIndex = 24
-        Me.rb_B.TabStop = True
-        Me.rb_B.Text = "B"
-        Me.rb_B.UseVisualStyleBackColor = True
-        '
-        'rb_C
-        '
-        Me.rb_C.AutoSize = True
-        Me.rb_C.Location = New System.Drawing.Point(79, 3)
-        Me.rb_C.Name = "rb_C"
-        Me.rb_C.Size = New System.Drawing.Size(32, 17)
-        Me.rb_C.TabIndex = 25
-        Me.rb_C.TabStop = True
-        Me.rb_C.Text = "C"
-        Me.rb_C.UseVisualStyleBackColor = True
-        '
-        'rb_D
-        '
-        Me.rb_D.AutoSize = True
-        Me.rb_D.Location = New System.Drawing.Point(117, 3)
-        Me.rb_D.Name = "rb_D"
-        Me.rb_D.Size = New System.Drawing.Size(33, 17)
-        Me.rb_D.TabIndex = 26
-        Me.rb_D.TabStop = True
-        Me.rb_D.Text = "D"
-        Me.rb_D.UseVisualStyleBackColor = True
-        '
-        'rb_E
-        '
-        Me.rb_E.AutoSize = True
-        Me.rb_E.Location = New System.Drawing.Point(156, 3)
-        Me.rb_E.Name = "rb_E"
-        Me.rb_E.Size = New System.Drawing.Size(32, 17)
-        Me.rb_E.TabIndex = 27
-        Me.rb_E.TabStop = True
-        Me.rb_E.Text = "E"
-        Me.rb_E.UseVisualStyleBackColor = True
         '
         'rb_F
         '
@@ -358,9 +309,64 @@ Partial Class Crear_material
         Me.rb_F.Text = "F"
         Me.rb_F.UseVisualStyleBackColor = True
         '
+        'rb_E
+        '
+        Me.rb_E.AutoSize = True
+        Me.rb_E.Location = New System.Drawing.Point(156, 3)
+        Me.rb_E.Name = "rb_E"
+        Me.rb_E.Size = New System.Drawing.Size(32, 17)
+        Me.rb_E.TabIndex = 27
+        Me.rb_E.TabStop = True
+        Me.rb_E.Text = "E"
+        Me.rb_E.UseVisualStyleBackColor = True
+        '
+        'rb_D
+        '
+        Me.rb_D.AutoSize = True
+        Me.rb_D.Location = New System.Drawing.Point(117, 3)
+        Me.rb_D.Name = "rb_D"
+        Me.rb_D.Size = New System.Drawing.Size(33, 17)
+        Me.rb_D.TabIndex = 26
+        Me.rb_D.TabStop = True
+        Me.rb_D.Text = "D"
+        Me.rb_D.UseVisualStyleBackColor = True
+        '
+        'rb_C
+        '
+        Me.rb_C.AutoSize = True
+        Me.rb_C.Location = New System.Drawing.Point(79, 3)
+        Me.rb_C.Name = "rb_C"
+        Me.rb_C.Size = New System.Drawing.Size(32, 17)
+        Me.rb_C.TabIndex = 25
+        Me.rb_C.TabStop = True
+        Me.rb_C.Text = "C"
+        Me.rb_C.UseVisualStyleBackColor = True
+        '
+        'rb_B
+        '
+        Me.rb_B.AutoSize = True
+        Me.rb_B.Location = New System.Drawing.Point(41, 3)
+        Me.rb_B.Name = "rb_B"
+        Me.rb_B.Size = New System.Drawing.Size(32, 17)
+        Me.rb_B.TabIndex = 24
+        Me.rb_B.TabStop = True
+        Me.rb_B.Text = "B"
+        Me.rb_B.UseVisualStyleBackColor = True
+        '
+        'rb_A
+        '
+        Me.rb_A.AutoSize = True
+        Me.rb_A.Location = New System.Drawing.Point(3, 3)
+        Me.rb_A.Name = "rb_A"
+        Me.rb_A.Size = New System.Drawing.Size(32, 17)
+        Me.rb_A.TabIndex = 23
+        Me.rb_A.TabStop = True
+        Me.rb_A.Text = "A"
+        Me.rb_A.UseVisualStyleBackColor = True
+        '
         'tb_stock
         '
-        Me.tb_stock.Location = New System.Drawing.Point(318, 426)
+        Me.tb_stock.Location = New System.Drawing.Point(318, 508)
         Me.tb_stock.Name = "tb_stock"
         Me.tb_stock.Size = New System.Drawing.Size(74, 20)
         Me.tb_stock.TabIndex = 23
@@ -369,18 +375,38 @@ Partial Class Crear_material
         '
         Me.lbl_stock.AutoSize = True
         Me.lbl_stock.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_stock.Location = New System.Drawing.Point(266, 426)
+        Me.lbl_stock.Location = New System.Drawing.Point(266, 508)
         Me.lbl_stock.Name = "lbl_stock"
         Me.lbl_stock.Size = New System.Drawing.Size(47, 17)
         Me.lbl_stock.TabIndex = 24
         Me.lbl_stock.Text = "Stock:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(318, 304)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(131, 69)
+        Me.TextBox1.TabIndex = 25
+        '
+        'lbl_descripcion
+        '
+        Me.lbl_descripcion.AutoSize = True
+        Me.lbl_descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_descripcion.Location = New System.Drawing.Point(227, 305)
+        Me.lbl_descripcion.Name = "lbl_descripcion"
+        Me.lbl_descripcion.Size = New System.Drawing.Size(86, 17)
+        Me.lbl_descripcion.TabIndex = 26
+        Me.lbl_descripcion.Text = "Descripcion:"
         '
         'Crear_material
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.ClientSize = New System.Drawing.Size(779, 487)
+        Me.ClientSize = New System.Drawing.Size(779, 563)
+        Me.Controls.Add(Me.lbl_descripcion)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.lbl_stock)
         Me.Controls.Add(Me.tb_stock)
         Me.Controls.Add(Me.pnl_seccion)
@@ -405,6 +431,7 @@ Partial Class Crear_material
         Me.Controls.Add(Me.PB_logo)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Crear_material"
         Me.Text = "Crear material"
@@ -453,4 +480,6 @@ Partial Class Crear_material
     Friend WithEvents rb_A As RadioButton
     Friend WithEvents tb_stock As TextBox
     Friend WithEvents lbl_stock As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lbl_descripcion As Label
 End Class
