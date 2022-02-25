@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Crear_material
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Crear_material
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Crear_material))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -56,8 +56,11 @@ Partial Class Crear_material
         Me.rb_A = New System.Windows.Forms.RadioButton()
         Me.tb_stock = New System.Windows.Forms.TextBox()
         Me.lbl_stock = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tb_desc = New System.Windows.Forms.TextBox()
         Me.lbl_descripcion = New System.Windows.Forms.Label()
+        Me.err_material = New System.Windows.Forms.Label()
+        Me.err_cat = New System.Windows.Forms.Label()
+        Me.err_subcat = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -381,13 +384,13 @@ Partial Class Crear_material
         Me.lbl_stock.TabIndex = 24
         Me.lbl_stock.Text = "Stock:"
         '
-        'TextBox1
+        'tb_desc
         '
-        Me.TextBox1.Location = New System.Drawing.Point(318, 304)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(131, 69)
-        Me.TextBox1.TabIndex = 25
+        Me.tb_desc.Location = New System.Drawing.Point(318, 304)
+        Me.tb_desc.Multiline = True
+        Me.tb_desc.Name = "tb_desc"
+        Me.tb_desc.Size = New System.Drawing.Size(131, 69)
+        Me.tb_desc.TabIndex = 25
         '
         'lbl_descripcion
         '
@@ -399,14 +402,50 @@ Partial Class Crear_material
         Me.lbl_descripcion.TabIndex = 26
         Me.lbl_descripcion.Text = "Descripcion:"
         '
+        'err_material
+        '
+        Me.err_material.AutoSize = True
+        Me.err_material.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.err_material.ForeColor = System.Drawing.Color.Red
+        Me.err_material.Location = New System.Drawing.Point(450, 168)
+        Me.err_material.Name = "err_material"
+        Me.err_material.Size = New System.Drawing.Size(27, 13)
+        Me.err_material.TabIndex = 28
+        Me.err_material.Text = "hola"
+        '
+        'err_cat
+        '
+        Me.err_cat.AutoSize = True
+        Me.err_cat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.err_cat.ForeColor = System.Drawing.Color.Red
+        Me.err_cat.Location = New System.Drawing.Point(450, 203)
+        Me.err_cat.Name = "err_cat"
+        Me.err_cat.Size = New System.Drawing.Size(27, 13)
+        Me.err_cat.TabIndex = 29
+        Me.err_cat.Text = "hola"
+        '
+        'err_subcat
+        '
+        Me.err_subcat.AutoSize = True
+        Me.err_subcat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.err_subcat.ForeColor = System.Drawing.Color.Red
+        Me.err_subcat.Location = New System.Drawing.Point(450, 239)
+        Me.err_subcat.Name = "err_subcat"
+        Me.err_subcat.Size = New System.Drawing.Size(27, 13)
+        Me.err_subcat.TabIndex = 30
+        Me.err_subcat.Text = "hola"
+        '
         'Crear_material
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(779, 563)
+        Me.Controls.Add(Me.err_subcat)
+        Me.Controls.Add(Me.err_cat)
+        Me.Controls.Add(Me.err_material)
         Me.Controls.Add(Me.lbl_descripcion)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.tb_desc)
         Me.Controls.Add(Me.lbl_stock)
         Me.Controls.Add(Me.tb_stock)
         Me.Controls.Add(Me.pnl_seccion)
@@ -480,6 +519,9 @@ Partial Class Crear_material
     Friend WithEvents rb_A As RadioButton
     Friend WithEvents tb_stock As TextBox
     Friend WithEvents lbl_stock As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tb_desc As TextBox
     Friend WithEvents lbl_descripcion As Label
+    Friend WithEvents err_material As Label
+    Friend WithEvents err_cat As Label
+    Friend WithEvents err_subcat As Label
 End Class
