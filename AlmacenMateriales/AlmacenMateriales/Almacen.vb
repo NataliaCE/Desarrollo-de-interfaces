@@ -16,4 +16,22 @@
         formulario.Show()
         Me.Close()
     End Sub
+
+    Private Sub TS_listar_Click(sender As Object, e As EventArgs) Handles TS_listar.Click
+        Dim formulario As New Listar_materiales
+        formulario.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub Btn_listar_Click(sender As Object, e As EventArgs) Handles Btn_listar.Click
+        Dim formulario As New Listar_materiales
+        formulario.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub ListarMaterialesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarMaterialesToolStripMenuItem.Click
+        Dim formulario As New Listar_materiales
+        formulario.Show()
+        Me.Close()
+    End Sub
 End Class

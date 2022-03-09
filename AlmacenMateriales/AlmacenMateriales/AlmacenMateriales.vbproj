@@ -106,6 +106,12 @@
     <Compile Include="Crear_material.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listar_materiales.Designer.vb">
+      <DependentUpon>Listar_materiales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listar_materiales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Crear_material.resx">
       <DependentUpon>Crear_material.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listar_materiales.resx">
+      <DependentUpon>Listar_materiales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

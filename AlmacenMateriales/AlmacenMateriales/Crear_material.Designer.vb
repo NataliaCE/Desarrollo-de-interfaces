@@ -25,11 +25,13 @@ Partial Class Crear_material
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Crear_material))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModificarMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListarMaterialesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BorrarMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.TS_inicio = New System.Windows.Forms.ToolStripButton()
         Me.TS_guardar = New System.Windows.Forms.ToolStripButton()
         Me.Lbl_nomPantalla = New System.Windows.Forms.Label()
-        Me.PB_logo = New System.Windows.Forms.PictureBox()
         Me.lbl_num_mat = New System.Windows.Forms.Label()
         Me.tb_num_mat = New System.Windows.Forms.TextBox()
         Me.lbl_material = New System.Windows.Forms.Label()
@@ -61,10 +63,11 @@ Partial Class Crear_material
         Me.err_material = New System.Windows.Forms.Label()
         Me.err_cat = New System.Windows.Forms.Label()
         Me.err_subcat = New System.Windows.Forms.Label()
+        Me.PB_logo = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
-        CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_seccion.SuspendLayout()
+        CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -79,9 +82,28 @@ Partial Class Crear_material
         '
         'OpcionesToolStripMenuItem
         '
+        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ModificarMaterialToolStripMenuItem, Me.ListarMaterialesToolStripMenuItem, Me.BorrarMaterialToolStripMenuItem})
         Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
         Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
         Me.OpcionesToolStripMenuItem.Text = "Opciones"
+        '
+        'ModificarMaterialToolStripMenuItem
+        '
+        Me.ModificarMaterialToolStripMenuItem.Name = "ModificarMaterialToolStripMenuItem"
+        Me.ModificarMaterialToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ModificarMaterialToolStripMenuItem.Text = "Modificar material"
+        '
+        'ListarMaterialesToolStripMenuItem
+        '
+        Me.ListarMaterialesToolStripMenuItem.Name = "ListarMaterialesToolStripMenuItem"
+        Me.ListarMaterialesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListarMaterialesToolStripMenuItem.Text = "Listar materiales"
+        '
+        'BorrarMaterialToolStripMenuItem
+        '
+        Me.BorrarMaterialToolStripMenuItem.Name = "BorrarMaterialToolStripMenuItem"
+        Me.BorrarMaterialToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BorrarMaterialToolStripMenuItem.Text = "Borrar material"
         '
         'ToolStrip1
         '
@@ -123,16 +145,6 @@ Partial Class Crear_material
         Me.Lbl_nomPantalla.Size = New System.Drawing.Size(134, 25)
         Me.Lbl_nomPantalla.TabIndex = 4
         Me.Lbl_nomPantalla.Text = "Crear material"
-        '
-        'PB_logo
-        '
-        Me.PB_logo.Image = Global.AlmacenMateriales.My.Resources.Resources.logo
-        Me.PB_logo.Location = New System.Drawing.Point(12, 62)
-        Me.PB_logo.Name = "PB_logo"
-        Me.PB_logo.Size = New System.Drawing.Size(50, 50)
-        Me.PB_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PB_logo.TabIndex = 3
-        Me.PB_logo.TabStop = False
         '
         'lbl_num_mat
         '
@@ -409,9 +421,8 @@ Partial Class Crear_material
         Me.err_material.ForeColor = System.Drawing.Color.Red
         Me.err_material.Location = New System.Drawing.Point(450, 168)
         Me.err_material.Name = "err_material"
-        Me.err_material.Size = New System.Drawing.Size(27, 13)
+        Me.err_material.Size = New System.Drawing.Size(0, 13)
         Me.err_material.TabIndex = 28
-        Me.err_material.Text = "hola"
         '
         'err_cat
         '
@@ -420,9 +431,8 @@ Partial Class Crear_material
         Me.err_cat.ForeColor = System.Drawing.Color.Red
         Me.err_cat.Location = New System.Drawing.Point(450, 203)
         Me.err_cat.Name = "err_cat"
-        Me.err_cat.Size = New System.Drawing.Size(27, 13)
+        Me.err_cat.Size = New System.Drawing.Size(0, 13)
         Me.err_cat.TabIndex = 29
-        Me.err_cat.Text = "hola"
         '
         'err_subcat
         '
@@ -431,9 +441,18 @@ Partial Class Crear_material
         Me.err_subcat.ForeColor = System.Drawing.Color.Red
         Me.err_subcat.Location = New System.Drawing.Point(450, 239)
         Me.err_subcat.Name = "err_subcat"
-        Me.err_subcat.Size = New System.Drawing.Size(27, 13)
+        Me.err_subcat.Size = New System.Drawing.Size(0, 13)
         Me.err_subcat.TabIndex = 30
-        Me.err_subcat.Text = "hola"
+        '
+        'PB_logo
+        '
+        Me.PB_logo.Image = Global.AlmacenMateriales.My.Resources.Resources.logo
+        Me.PB_logo.Location = New System.Drawing.Point(12, 62)
+        Me.PB_logo.Name = "PB_logo"
+        Me.PB_logo.Size = New System.Drawing.Size(50, 50)
+        Me.PB_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_logo.TabIndex = 3
+        Me.PB_logo.TabStop = False
         '
         'Crear_material
         '
@@ -478,9 +497,9 @@ Partial Class Crear_material
         Me.MenuStrip1.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_seccion.ResumeLayout(False)
         Me.pnl_seccion.PerformLayout()
+        CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -524,4 +543,7 @@ Partial Class Crear_material
     Friend WithEvents err_material As Label
     Friend WithEvents err_cat As Label
     Friend WithEvents err_subcat As Label
+    Friend WithEvents ModificarMaterialToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListarMaterialesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BorrarMaterialToolStripMenuItem As ToolStripMenuItem
 End Class
