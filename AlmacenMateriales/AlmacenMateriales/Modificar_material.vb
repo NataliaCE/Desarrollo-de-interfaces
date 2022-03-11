@@ -1,27 +1,24 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
 
-Public Class Crear_material
+Public Class Modificar_material
     Dim directorio As String = Directory.GetCurrentDirectory()
     Dim dir As DirectoryInfo = Directory.GetParent(directorio)
     Dim carpeta As DirectoryInfo = Directory.GetParent(dir.ToString())
     Dim conexionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & carpeta.ToString() & "\AlmacenBD.mdf;Integrated Security=True"
     Dim conexion As New SqlConnection(conexionString)
-    Dim registro As Integer
     Dim importeCompra As Single = 0
 
-    Private Sub Crear_material_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub Modificar_material_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        obtenerRegistro()
     End Sub
 
     Private Sub TS_guardar_Click(sender As Object, e As EventArgs) Handles TS_guardar.Click
-        If comprobarDatos() Then
-            If enviarDatos() Then
-                MessageBox.Show("Datos ingresados correctamente", "Información")
-            End If
+        If enviarDatos() Then
+            MessageBox.Show("Datos ingresados correctamente", "Información")
         End If
     End Sub
+
 
     Private Sub cbx_categoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_categoria.SelectedIndexChanged
         Dim combo As New ComboBox
@@ -44,54 +41,44 @@ Public Class Crear_material
         calcularVenta()
     End Sub
 
-    Private Sub tb_compra_TextChanged(sender As Object, e As EventArgs) Handles tb_compra.TextChanged
-        calcularVenta()
-    End Sub
-
-    Private Sub tb_compra_LostFocus(sender As Object, e As EventArgs) Handles tb_compra.LostFocus
-        If Not tb_compra.Text.Trim() = "€" And Not tb_compra.Text.Trim() = "" Then
-            tb_compra.Text = String.Format("{0:C}", CDec(tb_compra.Text))
-        End If
-        'And tb_compra.Text.Trim() = ","
-    End Sub
-
-    Private Sub calcularVenta()
-        If Not tb_compra.Text = Nothing And Not tb_compra.Text.Trim = "€" And Not tb_compra.Text.Trim = "," And Not cbx_categoria.SelectedIndex = -1 Then
-            Dim calculo As Single = tb_compra.Text * importeCompra
-            tb_venta.Text = String.Format("{0:C}", calculo)
-        End If
-    End Sub
-
-    Private Sub obtenerRegistro()
+    Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        Dim registro As Integer = CInt(tb_buscar.Text)
         Dim cadena As String
         Dim comando As SqlCommand
         Dim registroSQL As SqlDataReader
 
+        cadena = "SELECT Materiales.num_mat, mat, cat, sub_cat, fe_reg, imp_com, imp_ven, pas, sec, stock FROM Materiales JOIN Gest_Materiales ON Materiales.num_mat = Gest_Materiales.num_mat WHERE Materiales.num_mat = " & registro
         Try
             conexion.Open()
-            cadena = "SELECT IDENT_CURRENT('Materiales') as total"
             comando = New SqlCommand(cadena, conexion)
             registroSQL = comando.ExecuteReader()
+            tb_buscar.Text = ""
+
             If registroSQL.Read() Then
-                If IsDBNull(registroSQL("total")) Then
-                    tb_num_mat.Text = 1
-                Else
-                    tb_num_mat.Text = registroSQL("total") + 1
-                End If
-                registro = tb_num_mat.Text
+                tb_num_mat.Text = registro
+                tb_material.Text = registroSQL("mat")
+                cbx_categoria.SelectedItem = registroSQL("cat")
+                cbx_subcat.SelectedItem = registroSQL("sub_cat")
+                dtp_fecha.Value = registroSQL("fe_reg")
+                'tb_desc.Text = registroSQL("desc")
+                tb_compra.Text = registroSQL("imp_com")
+                tb_venta.Text = registroSQL("imp_ven")
+                cbx_pasillo.SelectedItem = registroSQL("pas").ToString
+                tb_stock.Text = registroSQL("stock")
+                For Each radio As RadioButton In pnl_seccion.Controls
+                    If radio.Text = registroSQL("sec").ToString() Then
+                        radio.Checked = True
+                    End If
+                Next
+            Else
+                MessageBox.Show("No existe un artículo con el código ingresado")
+
             End If
-            registroSQL.Close()
             conexion.Close()
-
         Catch ex As Exception
-            Console.WriteLine(ex.Message)
+            MessageBox.Show(ex.Message)
         End Try
-    End Sub
 
-    Private Sub TS_inicio_Click(sender As Object, e As EventArgs) Handles TS_inicio.Click
-        Dim formulario As New Almacen
-        formulario.Show()
-        Me.Close()
     End Sub
 
     Function comprobarDatos() As Boolean
@@ -145,23 +132,11 @@ Public Class Crear_material
         Dim subcat As String = cbx_subcat.SelectedItem.ToString
         Dim fecha As Date = dtp_fecha.Value.ToString("dd/MM/yyyy HH:mm:ss")
         Dim descripcion As String = tb_desc.Text
-        Dim compra As Single
-        If Not compra = 0 Then
-            compra = tb_compra.Text
-        End If
-        Dim venta As Single
-        If Not venta = 0 Then
-            venta = tb_venta.Text
-        End If
-        Dim pasillo As Integer
-        If Not cbx_pasillo.SelectedIndex = -1 Then
-            pasillo = cbx_pasillo.SelectedItem.ToString
-        End If
+        Dim compra As Single = tb_compra.Text
+        Dim venta As Single = tb_venta.Text
+        Dim pasillo As Integer = cbx_pasillo.SelectedItem.ToString
         Dim seccion As Char
-        Dim stock As Integer
-        If Not stock = 0 Then
-            stock = tb_stock.Text
-        End If
+        Dim stock As Integer = tb_stock.Text
 
         For Each check As RadioButton In pnl_seccion.Controls
             If check.Checked Then
@@ -170,8 +145,8 @@ Public Class Crear_material
         Next
 
         Try
+            cadena = "UPDATE Materiales SET mat = @material, cat = @categoria, sub_cat = @subcat, fe_reg = @fecha, imp_com = @compra, imp_ven = @venta WHERE num_mat = @registro"
             conexion.Open()
-            cadena = "INSERT INTO Materiales VALUES (@material, @categoria, @subcat, @fecha, @descripcion, @compra, @venta)"
             comando = New SqlCommand(cadena, conexion)
             comando.Parameters.AddWithValue("@material", material)
             comando.Parameters.AddWithValue("@categoria", categoria)
@@ -180,17 +155,17 @@ Public Class Crear_material
             comando.Parameters.AddWithValue("@descripcion", descripcion)
             comando.Parameters.AddWithValue("@compra", compra)
             comando.Parameters.AddWithValue("@venta", venta)
+            comando.Parameters.AddWithValue("@registro", CInt(tb_num_mat.Text))
 
             comando.ExecuteNonQuery()
 
         Catch ex As Exception
             MessageBox.Show("Materiales" + ex.Message)
-            conexion.Close()
             Return False
         End Try
 
         Try
-            cadena2 = "INSERT INTO Gest_Materiales VALUES (@registro, @pasillo, @seccion, @stock)"
+            cadena2 = "UPDATE Gest_Materiales SET pas = @pasillo, sec = @seccion, stock = @stock WHERE num_mat = @registro"
             comando2 = New SqlCommand(cadena2, conexion)
             comando2.Parameters.AddWithValue("@registro", CInt(tb_num_mat.Text))
             comando2.Parameters.AddWithValue("@pasillo", pasillo)
@@ -209,20 +184,27 @@ Public Class Crear_material
 
     End Function
 
-    Private Sub ListarMaterialesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarMaterialesToolStripMenuItem.Click
-        Dim formulario As New Listar_materiales
-        formulario.Show()
-        Me.Close()
+    Private Sub calcularVenta()
+        If Not tb_compra.Text = Nothing And Not tb_compra.Text.Trim = "€" And Not tb_compra.Text.Trim = "," And Not cbx_categoria.SelectedIndex = -1 Then
+            Dim calculo As Single = tb_compra.Text * importeCompra
+            tb_venta.Text = String.Format("{0:C}", calculo)
+        End If
     End Sub
 
-    Private Sub BorrarMaterialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrarMaterialToolStripMenuItem.Click
-        Dim formulario As New Borrar_material
+    Private Sub TS_inicio_Click(sender As Object, e As EventArgs) Handles TS_inicio.Click
+        Dim formulario As New Almacen
         formulario.Show()
         Me.Close()
     End Sub
 
     Private Sub ModificarMaterialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificarMaterialToolStripMenuItem.Click
-        Dim formulario As New Modificar_material
+        Dim formulario As New Crear_material
+        formulario.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub ListarMaterialesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarMaterialesToolStripMenuItem.Click
+        Dim formulario As New Listar_materiales
         formulario.Show()
         Me.Close()
     End Sub

@@ -44,6 +44,7 @@ Partial Class Form1
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnPdf = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.Lbl_Titulo = New System.Windows.Forms.Label()
         CType(Me.NeptunoDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RejillaProductos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,11 +86,11 @@ Partial Class Form1
         Me.RejillaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.RejillaProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewCheckBoxColumn1})
         Me.RejillaProductos.DataSource = Me.ProductosBindingSource
-        Me.RejillaProductos.Location = New System.Drawing.Point(0, 102)
-        Me.RejillaProductos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RejillaProductos.Location = New System.Drawing.Point(0, 185)
+        Me.RejillaProductos.Margin = New System.Windows.Forms.Padding(4)
         Me.RejillaProductos.Name = "RejillaProductos"
         Me.RejillaProductos.RowHeadersWidth = 51
-        Me.RejillaProductos.Size = New System.Drawing.Size(1175, 554)
+        Me.RejillaProductos.Size = New System.Drawing.Size(1175, 471)
         Me.RejillaProductos.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -174,40 +175,40 @@ Partial Class Form1
         '
         'btnPrimero
         '
-        Me.btnPrimero.Location = New System.Drawing.Point(16, 66)
-        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPrimero.Location = New System.Drawing.Point(15, 137)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrimero.Name = "btnPrimero"
-        Me.btnPrimero.Size = New System.Drawing.Size(100, 28)
+        Me.btnPrimero.Size = New System.Drawing.Size(100, 30)
         Me.btnPrimero.TabIndex = 2
         Me.btnPrimero.Text = "Primero"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(124, 66)
-        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSiguiente.Location = New System.Drawing.Point(123, 137)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(100, 28)
+        Me.btnSiguiente.Size = New System.Drawing.Size(100, 30)
         Me.btnSiguiente.TabIndex = 3
         Me.btnSiguiente.Text = "Siguiente"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'btnUltimo
         '
-        Me.btnUltimo.Location = New System.Drawing.Point(1059, 66)
-        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUltimo.Location = New System.Drawing.Point(1058, 137)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(100, 28)
+        Me.btnUltimo.Size = New System.Drawing.Size(100, 30)
         Me.btnUltimo.TabIndex = 5
         Me.btnUltimo.Text = "Último"
         Me.btnUltimo.UseVisualStyleBackColor = True
         '
         'btnAnterior
         '
-        Me.btnAnterior.Location = New System.Drawing.Point(951, 66)
-        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAnterior.Location = New System.Drawing.Point(950, 137)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(100, 28)
+        Me.btnAnterior.Size = New System.Drawing.Size(100, 30)
         Me.btnAnterior.TabIndex = 4
         Me.btnAnterior.Text = "Anterior"
         Me.btnAnterior.UseVisualStyleBackColor = True
@@ -215,10 +216,10 @@ Partial Class Form1
         'btnPdf
         '
         Me.btnPdf.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPdf.Location = New System.Drawing.Point(585, 44)
-        Me.btnPdf.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPdf.Location = New System.Drawing.Point(584, 115)
+        Me.btnPdf.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPdf.Name = "btnPdf"
-        Me.btnPdf.Size = New System.Drawing.Size(100, 50)
+        Me.btnPdf.Size = New System.Drawing.Size(100, 52)
         Me.btnPdf.TabIndex = 7
         Me.btnPdf.Text = "PDF"
         Me.btnPdf.UseVisualStyleBackColor = True
@@ -226,19 +227,30 @@ Partial Class Form1
         'btnImprimir
         '
         Me.btnImprimir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImprimir.Location = New System.Drawing.Point(477, 44)
-        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnImprimir.Location = New System.Drawing.Point(476, 115)
+        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(100, 50)
+        Me.btnImprimir.Size = New System.Drawing.Size(100, 52)
         Me.btnImprimir.TabIndex = 6
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = True
+        '
+        'Lbl_Titulo
+        '
+        Me.Lbl_Titulo.AutoSize = True
+        Me.Lbl_Titulo.Font = New System.Drawing.Font("MV Boli", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Titulo.Location = New System.Drawing.Point(393, 26)
+        Me.Lbl_Titulo.Name = "Lbl_Titulo"
+        Me.Lbl_Titulo.Size = New System.Drawing.Size(349, 45)
+        Me.Lbl_Titulo.TabIndex = 8
+        Me.Lbl_Titulo.Text = "Neptuno Almacenes"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1175, 656)
+        Me.Controls.Add(Me.Lbl_Titulo)
         Me.Controls.Add(Me.btnPdf)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnUltimo)
@@ -246,13 +258,14 @@ Partial Class Form1
         Me.Controls.Add(Me.btnSiguiente)
         Me.Controls.Add(Me.btnPrimero)
         Me.Controls.Add(Me.RejillaProductos)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.NeptunoDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RejillaProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -277,4 +290,5 @@ Partial Class Form1
     Friend WithEvents btnAnterior As Button
     Friend WithEvents btnPdf As Button
     Friend WithEvents btnImprimir As Button
+    Friend WithEvents Lbl_Titulo As Label
 End Class
