@@ -143,4 +143,10 @@ Public Class Listar_materiales
 
         End Select
     End Sub
+
+    Private Sub BorrarMaterialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrarMaterialToolStripMenuItem.Click
+        Dim formulario As New Borrar_material
+        formulario.Show()
+        Me.Close()
+    End Sub
 End Class

@@ -55,10 +55,6 @@ Partial Class Listar_materiales
         Me.lbl_pasillo = New System.Windows.Forms.Label()
         Me.btn_listar = New System.Windows.Forms.Button()
         Me.GridMateriales = New System.Windows.Forms.DataGridView()
-        Me.AlmacenBDDataSet = New AlmacenMateriales.AlmacenBDDataSet()
-        Me.AlmacenBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AlmacenBDDataSet1 = New AlmacenMateriales.AlmacenBDDataSet()
-        Me.AlmacenBDDataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.num_mat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cat = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,15 +66,15 @@ Partial Class Listar_materiales
         Me.pas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AlmacenBDDataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AlmacenBDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Barra_menu.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_seccion.SuspendLayout()
         CType(Me.GridMateriales, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AlmacenBDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AlmacenBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AlmacenBDDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AlmacenBDDataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AlmacenBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Barra_menu
@@ -88,7 +84,7 @@ Partial Class Listar_materiales
         Me.Barra_menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionesToolStripMenuItem})
         Me.Barra_menu.Location = New System.Drawing.Point(0, 0)
         Me.Barra_menu.Name = "Barra_menu"
-        Me.Barra_menu.Size = New System.Drawing.Size(1371, 30)
+        Me.Barra_menu.Size = New System.Drawing.Size(1371, 28)
         Me.Barra_menu.TabIndex = 1
         Me.Barra_menu.Text = "MenuStrip1"
         '
@@ -96,25 +92,25 @@ Partial Class Listar_materiales
         '
         Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearMaterialToolStripMenuItem, Me.ModificarMaterialToolStripMenuItem, Me.BorrarMaterialToolStripMenuItem})
         Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
-        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(85, 26)
+        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(85, 24)
         Me.OpcionesToolStripMenuItem.Text = "Opciones"
         '
         'CrearMaterialToolStripMenuItem
         '
         Me.CrearMaterialToolStripMenuItem.Name = "CrearMaterialToolStripMenuItem"
-        Me.CrearMaterialToolStripMenuItem.Size = New System.Drawing.Size(215, 26)
+        Me.CrearMaterialToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.CrearMaterialToolStripMenuItem.Text = "Crear material"
         '
         'ModificarMaterialToolStripMenuItem
         '
         Me.ModificarMaterialToolStripMenuItem.Name = "ModificarMaterialToolStripMenuItem"
-        Me.ModificarMaterialToolStripMenuItem.Size = New System.Drawing.Size(215, 26)
+        Me.ModificarMaterialToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ModificarMaterialToolStripMenuItem.Text = "Modificar material"
         '
         'BorrarMaterialToolStripMenuItem
         '
         Me.BorrarMaterialToolStripMenuItem.Name = "BorrarMaterialToolStripMenuItem"
-        Me.BorrarMaterialToolStripMenuItem.Size = New System.Drawing.Size(215, 26)
+        Me.BorrarMaterialToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.BorrarMaterialToolStripMenuItem.Text = "Borrar material"
         '
         'ToolStrip1
@@ -122,9 +118,9 @@ Partial Class Listar_materiales
         Me.ToolStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(22, 22)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_inicio})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 30)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 28)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1371, 31)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1371, 29)
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -134,7 +130,7 @@ Partial Class Listar_materiales
         Me.TS_inicio.Image = Global.AlmacenMateriales.My.Resources.Resources.inicio
         Me.TS_inicio.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TS_inicio.Name = "TS_inicio"
-        Me.TS_inicio.Size = New System.Drawing.Size(29, 28)
+        Me.TS_inicio.Size = New System.Drawing.Size(29, 26)
         Me.TS_inicio.Text = "ToolStripButton1"
         Me.TS_inicio.ToolTipText = "Inicio"
         '
@@ -153,7 +149,7 @@ Partial Class Listar_materiales
         '
         Me.PB_logo.Image = Global.AlmacenMateriales.My.Resources.Resources.logo
         Me.PB_logo.Location = New System.Drawing.Point(16, 76)
-        Me.PB_logo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PB_logo.Margin = New System.Windows.Forms.Padding(4)
         Me.PB_logo.Name = "PB_logo"
         Me.PB_logo.Size = New System.Drawing.Size(67, 62)
         Me.PB_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -163,7 +159,7 @@ Partial Class Listar_materiales
         'tb_num_mat
         '
         Me.tb_num_mat.Location = New System.Drawing.Point(472, 161)
-        Me.tb_num_mat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tb_num_mat.Margin = New System.Windows.Forms.Padding(4)
         Me.tb_num_mat.Name = "tb_num_mat"
         Me.tb_num_mat.Size = New System.Drawing.Size(172, 22)
         Me.tb_num_mat.TabIndex = 8
@@ -205,7 +201,7 @@ Partial Class Listar_materiales
         '
         Me.cbx_subcat.FormattingEnabled = True
         Me.cbx_subcat.Location = New System.Drawing.Point(472, 247)
-        Me.cbx_subcat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbx_subcat.Margin = New System.Windows.Forms.Padding(4)
         Me.cbx_subcat.Name = "cbx_subcat"
         Me.cbx_subcat.Size = New System.Drawing.Size(172, 24)
         Me.cbx_subcat.TabIndex = 34
@@ -226,7 +222,7 @@ Partial Class Listar_materiales
         Me.cbx_categoria.FormattingEnabled = True
         Me.cbx_categoria.Items.AddRange(New Object() {"Hardware", "Software"})
         Me.cbx_categoria.Location = New System.Drawing.Point(472, 203)
-        Me.cbx_categoria.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbx_categoria.Margin = New System.Windows.Forms.Padding(4)
         Me.cbx_categoria.Name = "cbx_categoria"
         Me.cbx_categoria.Size = New System.Drawing.Size(172, 24)
         Me.cbx_categoria.TabIndex = 32
@@ -257,7 +253,7 @@ Partial Class Listar_materiales
         '
         Me.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_fecha.Location = New System.Drawing.Point(473, 290)
-        Me.dtp_fecha.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtp_fecha.Margin = New System.Windows.Forms.Padding(4)
         Me.dtp_fecha.Name = "dtp_fecha"
         Me.dtp_fecha.Size = New System.Drawing.Size(172, 22)
         Me.dtp_fecha.TabIndex = 37
@@ -271,7 +267,7 @@ Partial Class Listar_materiales
         Me.pnl_seccion.Controls.Add(Me.rb_B)
         Me.pnl_seccion.Controls.Add(Me.rb_A)
         Me.pnl_seccion.Location = New System.Drawing.Point(473, 364)
-        Me.pnl_seccion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnl_seccion.Margin = New System.Windows.Forms.Padding(4)
         Me.pnl_seccion.Name = "pnl_seccion"
         Me.pnl_seccion.Size = New System.Drawing.Size(307, 30)
         Me.pnl_seccion.TabIndex = 42
@@ -280,7 +276,7 @@ Partial Class Listar_materiales
         '
         Me.rb_F.AutoSize = True
         Me.rb_F.Location = New System.Drawing.Point(259, 4)
-        Me.rb_F.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_F.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_F.Name = "rb_F"
         Me.rb_F.Size = New System.Drawing.Size(37, 21)
         Me.rb_F.TabIndex = 28
@@ -292,7 +288,7 @@ Partial Class Listar_materiales
         '
         Me.rb_E.AutoSize = True
         Me.rb_E.Location = New System.Drawing.Point(208, 4)
-        Me.rb_E.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_E.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_E.Name = "rb_E"
         Me.rb_E.Size = New System.Drawing.Size(38, 21)
         Me.rb_E.TabIndex = 27
@@ -304,7 +300,7 @@ Partial Class Listar_materiales
         '
         Me.rb_D.AutoSize = True
         Me.rb_D.Location = New System.Drawing.Point(156, 4)
-        Me.rb_D.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_D.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_D.Name = "rb_D"
         Me.rb_D.Size = New System.Drawing.Size(39, 21)
         Me.rb_D.TabIndex = 26
@@ -316,7 +312,7 @@ Partial Class Listar_materiales
         '
         Me.rb_C.AutoSize = True
         Me.rb_C.Location = New System.Drawing.Point(105, 4)
-        Me.rb_C.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_C.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_C.Name = "rb_C"
         Me.rb_C.Size = New System.Drawing.Size(38, 21)
         Me.rb_C.TabIndex = 25
@@ -328,7 +324,7 @@ Partial Class Listar_materiales
         '
         Me.rb_B.AutoSize = True
         Me.rb_B.Location = New System.Drawing.Point(55, 4)
-        Me.rb_B.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_B.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_B.Name = "rb_B"
         Me.rb_B.Size = New System.Drawing.Size(38, 21)
         Me.rb_B.TabIndex = 24
@@ -340,7 +336,7 @@ Partial Class Listar_materiales
         '
         Me.rb_A.AutoSize = True
         Me.rb_A.Location = New System.Drawing.Point(4, 4)
-        Me.rb_A.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_A.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_A.Name = "rb_A"
         Me.rb_A.Size = New System.Drawing.Size(38, 21)
         Me.rb_A.TabIndex = 23
@@ -364,7 +360,7 @@ Partial Class Listar_materiales
         Me.cbx_pasillo.FormattingEnabled = True
         Me.cbx_pasillo.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8"})
         Me.cbx_pasillo.Location = New System.Drawing.Point(473, 331)
-        Me.cbx_pasillo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbx_pasillo.Margin = New System.Windows.Forms.Padding(4)
         Me.cbx_pasillo.Name = "cbx_pasillo"
         Me.cbx_pasillo.Size = New System.Drawing.Size(97, 24)
         Me.cbx_pasillo.TabIndex = 40
@@ -384,7 +380,7 @@ Partial Class Listar_materiales
         '
         Me.btn_listar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_listar.Location = New System.Drawing.Point(835, 346)
-        Me.btn_listar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_listar.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_listar.Name = "btn_listar"
         Me.btn_listar.Size = New System.Drawing.Size(140, 48)
         Me.btn_listar.TabIndex = 43
@@ -400,31 +396,11 @@ Partial Class Listar_materiales
         Me.GridMateriales.DataSource = Me.AlmacenBDDataSet1BindingSource
         Me.GridMateriales.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.GridMateriales.Location = New System.Drawing.Point(0, 422)
-        Me.GridMateriales.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GridMateriales.Margin = New System.Windows.Forms.Padding(4)
         Me.GridMateriales.Name = "GridMateriales"
         Me.GridMateriales.RowHeadersWidth = 51
         Me.GridMateriales.Size = New System.Drawing.Size(1371, 209)
         Me.GridMateriales.TabIndex = 44
-        '
-        'AlmacenBDDataSet
-        '
-        Me.AlmacenBDDataSet.DataSetName = "AlmacenBDDataSet"
-        Me.AlmacenBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'AlmacenBDDataSetBindingSource
-        '
-        Me.AlmacenBDDataSetBindingSource.DataSource = Me.AlmacenBDDataSet
-        Me.AlmacenBDDataSetBindingSource.Position = 0
-        '
-        'AlmacenBDDataSet1
-        '
-        Me.AlmacenBDDataSet1.DataSetName = "AlmacenBDDataSet"
-        Me.AlmacenBDDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'AlmacenBDDataSet1BindingSource
-        '
-        Me.AlmacenBDDataSet1BindingSource.DataSource = Me.AlmacenBDDataSet1
-        Me.AlmacenBDDataSet1BindingSource.Position = 0
         '
         'num_mat
         '
@@ -541,7 +517,7 @@ Partial Class Listar_materiales
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Barra_menu)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Listar_materiales"
         Me.Text = "Listar Materiales"
         Me.Barra_menu.ResumeLayout(False)
@@ -552,10 +528,8 @@ Partial Class Listar_materiales
         Me.pnl_seccion.ResumeLayout(False)
         Me.pnl_seccion.PerformLayout()
         CType(Me.GridMateriales, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AlmacenBDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AlmacenBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AlmacenBDDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AlmacenBDDataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AlmacenBDDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

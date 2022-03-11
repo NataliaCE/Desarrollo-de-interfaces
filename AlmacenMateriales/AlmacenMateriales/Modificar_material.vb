@@ -9,10 +9,6 @@ Public Class Modificar_material
     Dim conexion As New SqlConnection(conexionString)
     Dim importeCompra As Single = 0
 
-    Private Sub Modificar_material_Load(sender As Object, e As EventArgs) Handles Me.Load
-
-    End Sub
-
     Private Sub TS_guardar_Click(sender As Object, e As EventArgs) Handles TS_guardar.Click
         If enviarDatos() Then
             MessageBox.Show("Datos ingresados correctamente", "Información")

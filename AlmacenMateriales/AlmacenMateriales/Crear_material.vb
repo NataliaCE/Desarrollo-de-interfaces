@@ -52,7 +52,6 @@ Public Class Crear_material
         If Not tb_compra.Text.Trim() = "€" And Not tb_compra.Text.Trim() = "" Then
             tb_compra.Text = String.Format("{0:C}", CDec(tb_compra.Text))
         End If
-        'And tb_compra.Text.Trim() = ","
     End Sub
 
     Private Sub calcularVenta()

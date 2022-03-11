@@ -23,12 +23,14 @@ Partial Class Crear_material
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Crear_material))
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.Barra_menu = New System.Windows.Forms.MenuStrip()
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarMaterialesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BorrarMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.Barra_iconos = New System.Windows.Forms.ToolStrip()
+        Me.TS_inicio = New System.Windows.Forms.ToolStripButton()
+        Me.TS_guardar = New System.Windows.Forms.ToolStripButton()
         Me.Lbl_nomPantalla = New System.Windows.Forms.Label()
         Me.lbl_num_mat = New System.Windows.Forms.Label()
         Me.tb_num_mat = New System.Windows.Forms.TextBox()
@@ -62,24 +64,22 @@ Partial Class Crear_material
         Me.err_cat = New System.Windows.Forms.Label()
         Me.err_subcat = New System.Windows.Forms.Label()
         Me.PB_logo = New System.Windows.Forms.PictureBox()
-        Me.TS_inicio = New System.Windows.Forms.ToolStripButton()
-        Me.TS_guardar = New System.Windows.Forms.ToolStripButton()
-        Me.MenuStrip1.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
+        Me.Barra_menu.SuspendLayout()
+        Me.Barra_iconos.SuspendLayout()
         Me.pnl_seccion.SuspendLayout()
         CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'Barra_menu
         '
-        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionesToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1039, 28)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.Barra_menu.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Barra_menu.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.Barra_menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionesToolStripMenuItem})
+        Me.Barra_menu.Location = New System.Drawing.Point(0, 0)
+        Me.Barra_menu.Name = "Barra_menu"
+        Me.Barra_menu.Size = New System.Drawing.Size(1039, 28)
+        Me.Barra_menu.TabIndex = 0
+        Me.Barra_menu.Text = "MenuStrip1"
         '
         'OpcionesToolStripMenuItem
         '
@@ -91,31 +91,51 @@ Partial Class Crear_material
         'ModificarMaterialToolStripMenuItem
         '
         Me.ModificarMaterialToolStripMenuItem.Name = "ModificarMaterialToolStripMenuItem"
-        Me.ModificarMaterialToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ModificarMaterialToolStripMenuItem.Size = New System.Drawing.Size(215, 26)
         Me.ModificarMaterialToolStripMenuItem.Text = "Modificar material"
         '
         'ListarMaterialesToolStripMenuItem
         '
         Me.ListarMaterialesToolStripMenuItem.Name = "ListarMaterialesToolStripMenuItem"
-        Me.ListarMaterialesToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ListarMaterialesToolStripMenuItem.Size = New System.Drawing.Size(215, 26)
         Me.ListarMaterialesToolStripMenuItem.Text = "Listar materiales"
         '
         'BorrarMaterialToolStripMenuItem
         '
         Me.BorrarMaterialToolStripMenuItem.Name = "BorrarMaterialToolStripMenuItem"
-        Me.BorrarMaterialToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.BorrarMaterialToolStripMenuItem.Size = New System.Drawing.Size(215, 26)
         Me.BorrarMaterialToolStripMenuItem.Text = "Borrar material"
         '
-        'ToolStrip1
+        'Barra_iconos
         '
-        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(22, 22)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_inicio, Me.TS_guardar})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 28)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1039, 29)
-        Me.ToolStrip1.TabIndex = 1
-        Me.ToolStrip1.Text = "ToolStrip1"
+        Me.Barra_iconos.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Barra_iconos.ImageScalingSize = New System.Drawing.Size(22, 22)
+        Me.Barra_iconos.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_inicio, Me.TS_guardar})
+        Me.Barra_iconos.Location = New System.Drawing.Point(0, 28)
+        Me.Barra_iconos.Name = "Barra_iconos"
+        Me.Barra_iconos.Size = New System.Drawing.Size(1039, 29)
+        Me.Barra_iconos.TabIndex = 1
+        Me.Barra_iconos.Text = "ToolStrip1"
+        '
+        'TS_inicio
+        '
+        Me.TS_inicio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TS_inicio.Image = Global.AlmacenMateriales.My.Resources.Resources.inicio
+        Me.TS_inicio.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TS_inicio.Name = "TS_inicio"
+        Me.TS_inicio.Size = New System.Drawing.Size(29, 26)
+        Me.TS_inicio.Text = "ToolStripButton1"
+        Me.TS_inicio.ToolTipText = "Inicio"
+        '
+        'TS_guardar
+        '
+        Me.TS_guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TS_guardar.Image = Global.AlmacenMateriales.My.Resources.Resources.guardar
+        Me.TS_guardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TS_guardar.Name = "TS_guardar"
+        Me.TS_guardar.Size = New System.Drawing.Size(29, 26)
+        Me.TS_guardar.Text = "ToolStripButton2"
+        Me.TS_guardar.ToolTipText = "Guardar"
         '
         'Lbl_nomPantalla
         '
@@ -143,7 +163,7 @@ Partial Class Crear_material
         '
         Me.tb_num_mat.Enabled = False
         Me.tb_num_mat.Location = New System.Drawing.Point(425, 161)
-        Me.tb_num_mat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tb_num_mat.Margin = New System.Windows.Forms.Padding(4)
         Me.tb_num_mat.Name = "tb_num_mat"
         Me.tb_num_mat.Size = New System.Drawing.Size(172, 22)
         Me.tb_num_mat.TabIndex = 6
@@ -162,7 +182,7 @@ Partial Class Crear_material
         'tb_material
         '
         Me.tb_material.Location = New System.Drawing.Point(425, 203)
-        Me.tb_material.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tb_material.Margin = New System.Windows.Forms.Padding(4)
         Me.tb_material.Name = "tb_material"
         Me.tb_material.Size = New System.Drawing.Size(172, 22)
         Me.tb_material.TabIndex = 8
@@ -183,7 +203,7 @@ Partial Class Crear_material
         Me.cbx_categoria.FormattingEnabled = True
         Me.cbx_categoria.Items.AddRange(New Object() {"Hardware", "Software"})
         Me.cbx_categoria.Location = New System.Drawing.Point(425, 246)
-        Me.cbx_categoria.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbx_categoria.Margin = New System.Windows.Forms.Padding(4)
         Me.cbx_categoria.Name = "cbx_categoria"
         Me.cbx_categoria.Size = New System.Drawing.Size(172, 24)
         Me.cbx_categoria.TabIndex = 10
@@ -203,7 +223,7 @@ Partial Class Crear_material
         '
         Me.cbx_subcat.FormattingEnabled = True
         Me.cbx_subcat.Location = New System.Drawing.Point(425, 290)
-        Me.cbx_subcat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbx_subcat.Margin = New System.Windows.Forms.Padding(4)
         Me.cbx_subcat.Name = "cbx_subcat"
         Me.cbx_subcat.Size = New System.Drawing.Size(172, 24)
         Me.cbx_subcat.TabIndex = 12
@@ -212,7 +232,7 @@ Partial Class Crear_material
         '
         Me.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_fecha.Location = New System.Drawing.Point(425, 334)
-        Me.dtp_fecha.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtp_fecha.Margin = New System.Windows.Forms.Padding(4)
         Me.dtp_fecha.Name = "dtp_fecha"
         Me.dtp_fecha.Size = New System.Drawing.Size(172, 22)
         Me.dtp_fecha.TabIndex = 13
@@ -242,7 +262,7 @@ Partial Class Crear_material
         'tb_compra
         '
         Me.tb_compra.Location = New System.Drawing.Point(425, 475)
-        Me.tb_compra.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tb_compra.Margin = New System.Windows.Forms.Padding(4)
         Me.tb_compra.Name = "tb_compra"
         Me.tb_compra.Size = New System.Drawing.Size(97, 22)
         Me.tb_compra.TabIndex = 16
@@ -262,7 +282,7 @@ Partial Class Crear_material
         '
         Me.tb_venta.Enabled = False
         Me.tb_venta.Location = New System.Drawing.Point(425, 516)
-        Me.tb_venta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tb_venta.Margin = New System.Windows.Forms.Padding(4)
         Me.tb_venta.Name = "tb_venta"
         Me.tb_venta.Size = New System.Drawing.Size(97, 22)
         Me.tb_venta.TabIndex = 18
@@ -283,7 +303,7 @@ Partial Class Crear_material
         Me.cbx_pasillo.FormattingEnabled = True
         Me.cbx_pasillo.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8"})
         Me.cbx_pasillo.Location = New System.Drawing.Point(425, 555)
-        Me.cbx_pasillo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbx_pasillo.Margin = New System.Windows.Forms.Padding(4)
         Me.cbx_pasillo.Name = "cbx_pasillo"
         Me.cbx_pasillo.Size = New System.Drawing.Size(97, 24)
         Me.cbx_pasillo.TabIndex = 20
@@ -308,7 +328,7 @@ Partial Class Crear_material
         Me.pnl_seccion.Controls.Add(Me.rb_B)
         Me.pnl_seccion.Controls.Add(Me.rb_A)
         Me.pnl_seccion.Location = New System.Drawing.Point(425, 588)
-        Me.pnl_seccion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnl_seccion.Margin = New System.Windows.Forms.Padding(4)
         Me.pnl_seccion.Name = "pnl_seccion"
         Me.pnl_seccion.Size = New System.Drawing.Size(307, 30)
         Me.pnl_seccion.TabIndex = 22
@@ -317,7 +337,7 @@ Partial Class Crear_material
         '
         Me.rb_F.AutoSize = True
         Me.rb_F.Location = New System.Drawing.Point(259, 4)
-        Me.rb_F.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_F.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_F.Name = "rb_F"
         Me.rb_F.Size = New System.Drawing.Size(37, 21)
         Me.rb_F.TabIndex = 28
@@ -329,7 +349,7 @@ Partial Class Crear_material
         '
         Me.rb_E.AutoSize = True
         Me.rb_E.Location = New System.Drawing.Point(208, 4)
-        Me.rb_E.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_E.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_E.Name = "rb_E"
         Me.rb_E.Size = New System.Drawing.Size(38, 21)
         Me.rb_E.TabIndex = 27
@@ -341,7 +361,7 @@ Partial Class Crear_material
         '
         Me.rb_D.AutoSize = True
         Me.rb_D.Location = New System.Drawing.Point(156, 4)
-        Me.rb_D.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_D.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_D.Name = "rb_D"
         Me.rb_D.Size = New System.Drawing.Size(39, 21)
         Me.rb_D.TabIndex = 26
@@ -353,7 +373,7 @@ Partial Class Crear_material
         '
         Me.rb_C.AutoSize = True
         Me.rb_C.Location = New System.Drawing.Point(105, 4)
-        Me.rb_C.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_C.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_C.Name = "rb_C"
         Me.rb_C.Size = New System.Drawing.Size(38, 21)
         Me.rb_C.TabIndex = 25
@@ -365,7 +385,7 @@ Partial Class Crear_material
         '
         Me.rb_B.AutoSize = True
         Me.rb_B.Location = New System.Drawing.Point(55, 4)
-        Me.rb_B.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_B.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_B.Name = "rb_B"
         Me.rb_B.Size = New System.Drawing.Size(38, 21)
         Me.rb_B.TabIndex = 24
@@ -377,7 +397,7 @@ Partial Class Crear_material
         '
         Me.rb_A.AutoSize = True
         Me.rb_A.Location = New System.Drawing.Point(4, 4)
-        Me.rb_A.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rb_A.Margin = New System.Windows.Forms.Padding(4)
         Me.rb_A.Name = "rb_A"
         Me.rb_A.Size = New System.Drawing.Size(38, 21)
         Me.rb_A.TabIndex = 23
@@ -388,7 +408,7 @@ Partial Class Crear_material
         'tb_stock
         '
         Me.tb_stock.Location = New System.Drawing.Point(424, 625)
-        Me.tb_stock.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tb_stock.Margin = New System.Windows.Forms.Padding(4)
         Me.tb_stock.Name = "tb_stock"
         Me.tb_stock.Size = New System.Drawing.Size(97, 22)
         Me.tb_stock.TabIndex = 23
@@ -407,7 +427,7 @@ Partial Class Crear_material
         'tb_desc
         '
         Me.tb_desc.Location = New System.Drawing.Point(424, 374)
-        Me.tb_desc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tb_desc.Margin = New System.Windows.Forms.Padding(4)
         Me.tb_desc.Multiline = True
         Me.tb_desc.Name = "tb_desc"
         Me.tb_desc.Size = New System.Drawing.Size(173, 84)
@@ -468,26 +488,6 @@ Partial Class Crear_material
         Me.PB_logo.TabIndex = 3
         Me.PB_logo.TabStop = False
         '
-        'TS_inicio
-        '
-        Me.TS_inicio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.TS_inicio.Image = Global.AlmacenMateriales.My.Resources.Resources.inicio
-        Me.TS_inicio.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.TS_inicio.Name = "TS_inicio"
-        Me.TS_inicio.Size = New System.Drawing.Size(29, 26)
-        Me.TS_inicio.Text = "ToolStripButton1"
-        Me.TS_inicio.ToolTipText = "Inicio"
-        '
-        'TS_guardar
-        '
-        Me.TS_guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.TS_guardar.Image = Global.AlmacenMateriales.My.Resources.Resources.guardar
-        Me.TS_guardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.TS_guardar.Name = "TS_guardar"
-        Me.TS_guardar.Size = New System.Drawing.Size(29, 26)
-        Me.TS_guardar.Text = "ToolStripButton2"
-        Me.TS_guardar.ToolTipText = "Guardar"
-        '
         'Crear_material
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -521,17 +521,17 @@ Partial Class Crear_material
         Me.Controls.Add(Me.lbl_num_mat)
         Me.Controls.Add(Me.Lbl_nomPantalla)
         Me.Controls.Add(Me.PB_logo)
-        Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.Barra_iconos)
+        Me.Controls.Add(Me.Barra_menu)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MainMenuStrip = Me.Barra_menu
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Crear_material"
         Me.Text = "Crear material"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
+        Me.Barra_menu.ResumeLayout(False)
+        Me.Barra_menu.PerformLayout()
+        Me.Barra_iconos.ResumeLayout(False)
+        Me.Barra_iconos.PerformLayout()
         Me.pnl_seccion.ResumeLayout(False)
         Me.pnl_seccion.PerformLayout()
         CType(Me.PB_logo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -540,9 +540,9 @@ Partial Class Crear_material
 
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents Barra_menu As MenuStrip
     Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents Barra_iconos As ToolStrip
     Friend WithEvents PB_logo As PictureBox
     Friend WithEvents Lbl_nomPantalla As Label
     Friend WithEvents TS_inicio As ToolStripButton
