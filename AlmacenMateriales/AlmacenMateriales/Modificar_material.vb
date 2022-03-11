@@ -43,7 +43,7 @@ Public Class Modificar_material
         Dim comando As SqlCommand
         Dim registroSQL As SqlDataReader
 
-        cadena = "SELECT Materiales.num_mat, mat, cat, sub_cat, fe_reg, imp_com, imp_ven, pas, sec, stock FROM Materiales JOIN Gest_Materiales ON Materiales.num_mat = Gest_Materiales.num_mat WHERE Materiales.num_mat = " & registro
+        cadena = "SELECT Materiales.num_mat, mat, cat, sub_cat, fe_reg,[desc], imp_com, imp_ven, pas, sec, stock FROM Materiales JOIN Gest_Materiales ON Materiales.num_mat = Gest_Materiales.num_mat WHERE Materiales.num_mat = " & registro
         Try
             conexion.Open()
             comando = New SqlCommand(cadena, conexion)
@@ -56,7 +56,7 @@ Public Class Modificar_material
                 cbx_categoria.SelectedItem = registroSQL("cat")
                 cbx_subcat.SelectedItem = registroSQL("sub_cat")
                 dtp_fecha.Value = registroSQL("fe_reg")
-                'tb_desc.Text = registroSQL("desc")
+                tb_desc.Text = registroSQL("desc")
                 tb_compra.Text = registroSQL("imp_com")
                 tb_venta.Text = registroSQL("imp_ven")
                 cbx_pasillo.SelectedItem = registroSQL("pas").ToString
@@ -141,7 +141,7 @@ Public Class Modificar_material
         Next
 
         Try
-            cadena = "UPDATE Materiales SET mat = @material, cat = @categoria, sub_cat = @subcat, fe_reg = @fecha, imp_com = @compra, imp_ven = @venta WHERE num_mat = @registro"
+            cadena = "UPDATE Materiales SET mat = @material, cat = @categoria, sub_cat = @subcat, fe_reg = @fecha, [desc]=@descripcion, imp_com = @compra, imp_ven = @venta WHERE num_mat = @registro"
             conexion.Open()
             comando = New SqlCommand(cadena, conexion)
             comando.Parameters.AddWithValue("@material", material)
@@ -203,5 +203,15 @@ Public Class Modificar_material
         Dim formulario As New Listar_materiales
         formulario.Show()
         Me.Close()
+    End Sub
+
+    Private Sub tb_compra_LostFocus(sender As Object, e As EventArgs) Handles tb_compra.LostFocus
+        If Not tb_compra.Text.Trim() = "€" And Not tb_compra.Text.Trim() = "" Then
+            tb_compra.Text = String.Format("{0:C}", CDec(tb_compra.Text))
+        End If
+    End Sub
+
+    Private Sub tb_compra_TextChanged(sender As Object, e As EventArgs) Handles tb_compra.TextChanged
+        calcularVenta()
     End Sub
 End Class

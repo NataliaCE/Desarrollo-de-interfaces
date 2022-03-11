@@ -48,6 +48,8 @@ Public Class Borrar_material
             Else
 
             End If
+        Else
+            MessageBox.Show("Este registro no existe.")
         End If
         tb_num_mat.Text = ""
     End Sub

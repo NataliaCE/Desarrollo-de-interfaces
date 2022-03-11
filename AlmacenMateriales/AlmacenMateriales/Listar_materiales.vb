@@ -10,7 +10,7 @@ Public Class Listar_materiales
 
     Dim adaptador As New SqlDataAdapter
     Dim dataSet As New DataSet
-    Dim consulta As String = "SELECT Materiales.num_mat, mat, cat, sub_cat, fe_reg, imp_com, imp_ven, pas, sec, stock FROM Materiales JOIN Gest_Materiales ON Materiales.num_mat = Gest_Materiales.num_mat"
+    Dim consulta As String = "SELECT Materiales.num_mat, mat, cat, sub_cat, fe_reg, [desc], imp_com, imp_ven, pas, sec, stock FROM Materiales JOIN Gest_Materiales ON Materiales.num_mat = Gest_Materiales.num_mat"
     Dim filtro As Integer = 0
 
 
@@ -50,11 +50,11 @@ Public Class Listar_materiales
     End Sub
 
     Private Sub Filtros()
-        consulta = "SELECT Materiales.num_mat, mat, cat, sub_cat, fe_reg, imp_com, imp_ven, pas, sec, stock FROM Materiales JOIN Gest_Materiales ON Materiales.num_mat = Gest_Materiales.num_mat"
+        consulta = "SELECT Materiales.num_mat, mat, cat, sub_cat, fe_reg, [desc], imp_com, imp_ven, pas, sec, stock FROM Materiales JOIN Gest_Materiales ON Materiales.num_mat = Gest_Materiales.num_mat"
         Dim numero As Single
         Dim categoria As String
         Dim subcat As String
-        Dim fecha As Date = dtp_fecha.Value.ToString("dd/MM/yyyy HH:mm:ss")
+        Dim fecha As Date = dtp_fecha.Value.ToString("dd/MM/yyyy")
         Dim pasillo As Integer
         Dim seccion As String
 
@@ -93,9 +93,9 @@ Public Class Listar_materiales
         End If
 
         'If contador = 0 Then
-        '    consulta = consulta & " WHERE fe_reg = " & fecha
+        '    consulta = consulta & " WHERE fe_reg = '" & fecha & "'"
         'Else
-        '    consulta = consulta & " AND fe_reg = " & fecha
+        '    consulta = consulta & " AND fe_reg = '" & fecha & "'"
         'End If
         'contador += 1
 
@@ -149,4 +149,12 @@ Public Class Listar_materiales
         formulario.Show()
         Me.Close()
     End Sub
+
+    Private Sub ModificarMaterialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificarMaterialToolStripMenuItem.Click
+        Dim formulario As New Modificar_material
+        formulario.Show()
+        Me.Close()
+    End Sub
+
+
 End Class
